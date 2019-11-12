@@ -2,7 +2,10 @@
 
 
   class Alimentos
-    def initialize
+    def initialize(nombre)
+
+      @nombre = nombre
+
     end
   end
 
