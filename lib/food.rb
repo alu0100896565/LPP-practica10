@@ -3,7 +3,7 @@
 
   class Alimentos
 
-    attr :nombre
+    attr_reader :nombre
     def initialize(nombre)
 
       @nombre = nombre
