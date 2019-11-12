@@ -16,6 +16,10 @@ RSpec.describe Alimentos do
     it "Debe existir un atributo con las emisiones" do
       expect(@lentejas.emisiones).to eq(0.4)
     end
+
+    it "Debe existir un atributo con la cantidad de terreno usada" do
+      expect(@lentejas.terreno).to eq(3.4)
+    end
 end
 
 end
