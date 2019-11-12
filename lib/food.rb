@@ -30,5 +30,10 @@
     end
   end
 
+  class Dieta
 
+    def initialize
+    end
+    
+      end
 
