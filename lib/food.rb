@@ -48,7 +48,16 @@
 
     end
 
-    
+    def idr
+
+      if @genero = "hombre" && @alimentoTotal.prot >= 54.0 && @alimentoTotal.valorEnergetico >= 3000
+        return true
+      elseif @genero = "mujer" && @alimentoTotal.prot >= 41.0 && @alimentoTotal.valorEnergetico >= 2300
+        return true
+      else return false
+
+      end
+    end
     
       end
 
