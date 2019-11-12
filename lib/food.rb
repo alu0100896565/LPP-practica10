@@ -58,6 +58,12 @@
 
       end
     end
+
+    def impactoAmbiental
+
+      "Para la dieta Dietita las emisiones de gases kgCO2eq son: #{@alimentoTotal.emisiones} y el terreno usado en m2 por año es: #{@alimentoTotal.terreno}"
+
+    end
     
       end
 
