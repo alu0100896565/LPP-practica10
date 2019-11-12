@@ -46,5 +46,8 @@ end
       expect(@dietita.respond_to?(:nombre)).to eq(true)
   end
 
+  it "Una dieta esta dirigida a un genero" do
+    expect(@dietita.respond_to?(:genero)).to eq(true)
+end
 end
 end
