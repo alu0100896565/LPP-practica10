@@ -111,5 +111,11 @@ it "Comprobar el impacto ambiental de la dieta" do
 
 end
 
+it "Desarrollar un metodo para obtener el impacto ambiental de la dieta formateado" do
+
+  expect(@dietita.impactoAmbiental).to eq("Para la dieta Dietita las emisiones de gases kgCO2eq son: 111.74 y el terreno usado en m2 por año es: 436.52")
+
+end
+
 end
 end
