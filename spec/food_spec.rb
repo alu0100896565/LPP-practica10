@@ -29,6 +29,10 @@ RSpec.describe Alimentos do
     it "Debe existir un metodo para calcular el valor energetico de un Alimento" do
       expect(@lentejas.valorEnergetico).to eq(314.6)
     end
+
+    it "Debe ser posible sumar comidas para sumar sus valores de nutrientes e impacto ambiental" do
+      expect((@lentejas+@lentejas).valorEnergetico).to eq(629.2)
+    end
 end
 
 end
