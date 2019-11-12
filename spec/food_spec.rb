@@ -20,6 +20,10 @@ RSpec.describe Alimentos do
     it "Debe existir un atributo con la cantidad de terreno usada" do
       expect(@lentejas.terreno).to eq(3.4)
     end
+
+    it "Debe existir un metodo para obtener el aimento formateado" do
+      expect(@lentejas.to_s).to eq("lentejas: { prot: 23.5, carbs: 52.0, lip: 1.4, emisiones: 0.4, terreno: 3.4 }")
+    end
 end
 
 end
