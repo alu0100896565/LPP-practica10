@@ -34,9 +34,17 @@ RSpec.describe Alimentos do
     it "Debe ser posible sumar comidas para sumar sus valores de nutrientes e impacto ambiental" do
       expect((@lentejas+@lentejas).valorEnergetico).to eq(629.2)
     end
+    
+end
+
+  context "Probando la clase Dieta" do
     it "Se ha de poder instanciar una dieta" do
       expect(@dietita.instance_of? Dieta).to eq(true)
     end
-end
 
+    it "Una dieta debe tener un Nombre" do
+      expect(@dietita.respond_to?(:nombre)).to eq(true)
+  end
+
+end
 end
