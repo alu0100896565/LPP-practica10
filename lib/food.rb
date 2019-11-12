@@ -3,7 +3,7 @@
 
   class Alimentos
 
-    attr_reader :nombre, :emisiones, :terreno
+    attr_reader :nombre, :emisiones, :terreno, :prot, :carbs, :lip
     def initialize(datos)
 
       @nombre = datos[:nombre]
@@ -21,7 +21,14 @@
     end
 
     def valorEnergetico
-      (@prot*4.0)+(@carbs*4.0)+(@lip*9)
+      (@prot*4.0)+(@carbs*4.0)+(@lip*9.0)
+    end
+
+    def +(other)
+      suma = { :nombre => "Mezcla", :emisiones => self.emisiones+other.emisiones, :terreno => self.terreno+other.terreno, :prot => self.prot+other.prot, :carbs => self.carbs+other.carbs, :lip => self.lip+other.lip}
+      Alimentos.new(suma)
     end
   end
+
+
 

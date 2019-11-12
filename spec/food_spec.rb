@@ -3,6 +3,7 @@ RSpec.describe Alimentos do
   before (:all) do
     @lentejasDat = { :nombre => "lentejas", :prot => 23.5, :carbs => 52.0, :lip => 1.4, :emisiones => 0.4, :terreno => 3.4}
     @lentejas = Alimentos.new(@lentejasDat)
+    @dietita = Dieta.new
   end
 
   context "Probando la clase Alimentos" do
@@ -32,6 +33,9 @@ RSpec.describe Alimentos do
 
     it "Debe ser posible sumar comidas para sumar sus valores de nutrientes e impacto ambiental" do
       expect((@lentejas+@lentejas).valorEnergetico).to eq(629.2)
+    end
+    it "Se ha de poder instanciar una dieta" do
+      expect(@dietita.instance_of? Dieta).to eq(true)
     end
 end
 
