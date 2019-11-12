@@ -25,6 +25,10 @@ RSpec.describe Alimentos do
     it "Debe existir un metodo para obtener el aimento formateado" do
       expect(@lentejas.to_s).to eq("lentejas: { prot: 23.5, carbs: 52.0, lip: 1.4, emisiones: 0.4, terreno: 3.4 }")
     end
+
+    it "Debe existir un metodo para calcular el valor energetico de un Alimento" do
+      expect(@lentejas.valorEnergetico).to eq(314.6)
+    end
 end
 
 end
