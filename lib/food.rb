@@ -20,5 +20,8 @@
       "#{@nombre}: { prot: #{@prot}, carbs: #{@carbs}, lip: #{@lip}, emisiones: #{@emisiones}, terreno: #{@terreno} }"
     end
 
+    def valorEnergetico
+      (@prot*4.0)+(@carbs*4.0)+(@lip*9)
+    end
   end
 
