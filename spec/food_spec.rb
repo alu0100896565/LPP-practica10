@@ -1,7 +1,7 @@
 require 'food'
 RSpec.describe Alimentos do
   before (:all) do
-    @lentejas = Alimentos.new("lentejas", 0.4)
+    @lentejas = Alimentos.new("lentejas", 0.4, 3.4)
   end
 
   context "Probando la clase Alimentos" do
