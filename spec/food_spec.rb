@@ -3,7 +3,7 @@ RSpec.describe Alimentos do
   before (:all) do
     @lentejasDat = { :nombre => "lentejas", :prot => 23.5, :carbs => 52.0, :lip => 1.4, :emisiones => 0.4, :terreno => 3.4}
     @lentejas = Alimentos.new(@lentejasDat)
-    @comidita = [@lentejas]
+    @comidita = [@lentejas, @lentejas]
     @dietita = Dieta.new("Dietita", "hombre", @comidita)
   end
 
@@ -53,6 +53,14 @@ end
 
 it "Una dieta debe contener alimentos" do
   expect(@dietita.respond_to?(:alimentos)).to eq(true)
+end
+
+it "Se debe comprobar la suma de los valores de los alimentos de la dieta" do
+  expect(@dietita.alimentoTotal.prot).to eq(47.0)
+  expect(@dietita.alimentoTotal.carbs).to eq(104.0)
+  expect(@dietita.alimentoTotal.lip).to eq(2.8)
+  expect(@dietita.alimentoTotal.emisiones).to eq(0.8)
+  expect(@dietita.alimentoTotal.terreno).to eq(6.8)
 end
 
 end
