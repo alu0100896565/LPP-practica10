@@ -32,9 +32,10 @@
 
   class Dieta
 
-    attr_reader :nombre
-    def initialize(nombre)
+    attr_reader :nombre, :genero
+    def initialize(nombre, genero)
       @nombre = nombre
+      @genero = genero
     end
     
       end
