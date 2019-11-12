@@ -104,5 +104,12 @@ it "Comprobar si la Alimentacion de la dieta cumple con el IDR para el género" 
   expect(@dietita.idr).to eq(true)
 end
 
+it "Comprobar el impacto ambiental de la dieta" do
+
+  expect(@dietita.alimentoTotal.emisiones).to eq(111.74)
+  expect(@dietita.alimentoTotal.terreno).to eq(436.52)
+
+end
+
 end
 end
