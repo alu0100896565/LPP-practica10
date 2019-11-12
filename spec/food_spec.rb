@@ -3,7 +3,8 @@ RSpec.describe Alimentos do
   before (:all) do
     @lentejasDat = { :nombre => "lentejas", :prot => 23.5, :carbs => 52.0, :lip => 1.4, :emisiones => 0.4, :terreno => 3.4}
     @lentejas = Alimentos.new(@lentejasDat)
-    @dietita = Dieta.new("Dietita", "hombre")
+    @comidita = [@lentejas]
+    @dietita = Dieta.new("Dietita", "hombre", @comidita)
   end
 
   context "Probando la clase Alimentos" do
