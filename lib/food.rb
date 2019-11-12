@@ -41,6 +41,12 @@
       end
       @alimentoTotal = Alimentos.new({ :nombre => nombre, :prot => 0.0, :carbs => 0.0, :lip => 0.0, :emisiones => 0.0, :terreno => 0.0})
     end
+
+    def sumaAlimentos
+
+      @alimentos.each { |x| @alimentoTotal=@alimentoTotal+x}
+
+    end
     
       end
 

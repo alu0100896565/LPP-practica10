@@ -56,6 +56,9 @@ it "Una dieta debe contener alimentos" do
 end
 
 it "Se debe comprobar la suma de los valores de los alimentos de la dieta" do
+
+  @dietita.sumaAlimentos
+
   expect(@dietita.alimentoTotal.prot).to eq(47.0)
   expect(@dietita.alimentoTotal.carbs).to eq(104.0)
   expect(@dietita.alimentoTotal.lip).to eq(2.8)
