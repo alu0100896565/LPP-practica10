@@ -47,6 +47,8 @@
       @alimentos.each { |x| @alimentoTotal=@alimentoTotal+x}
 
     end
+
+    
     
       end
 

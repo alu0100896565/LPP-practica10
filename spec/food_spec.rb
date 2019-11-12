@@ -66,5 +66,11 @@ it "Se debe comprobar la suma de los valores de los alimentos de la dieta" do
   expect(@dietita.alimentoTotal.terreno).to eq(6.8)
 end
 
+it "Comprobar si la Alimentacion de la dieta cumple con el IDR para el género" do
+  @dietita.sumaAlimentos
+
+  expect(@dietita.idr).to eq(true)
+end
+
 end
 end
