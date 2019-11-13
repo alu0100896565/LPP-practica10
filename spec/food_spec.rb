@@ -117,5 +117,28 @@ it "Desarrollar un metodo para obtener el impacto ambiental de la dieta formatea
 
 end
 
+it "Probar diferentas dietas para comprobar que superen el IDR y comprobar su impacto" do
+
+  @dietaCarneArray = [@cerdo, @pollo, @carneCordero, @carneVaca, @queso, @huevos, @leche, @pollo, @cerdo, @cerdo, @cerdo, @carneCordero,
+     @carneCordero, @queso, @leche, @carneVaca, @pollo, @cerdo]
+  @dietaCarne = Dieta.new("Dieta basada en carne", "hombre", @dietaCarneArray)
+  @dietaCarne.sumaAlimentos
+  expect(@dietaCarne.alimentoTotal.valorEnergetico).to eq(3093.7)
+  expect(@dietaCarne.alimentoTotal.prot).to eq(335.1)
+  expect(@dietaCarne.idr).to eq(true)
+  expect(@dietaCarne.alimentoTotal.emisiones).to eq(247.7)
+  expect(@dietaCarne.alimentoTotal.terreno).to eq(1064.8)
+
+  @dietaVeganaArray = [@lentejas, @nuez, @tofu, @chocolate, @cafe, @nuez, @tofu, @tofu, @lentejas, @chocolate]
+  @dietaVegana = Dieta.new("Dieta Vegana", "hombre", @dietaVeganaArray)
+  @dietaVegana.sumaAlimentos
+  expect(@dietaVegana.alimentoTotal.valorEnergetico).to eq(3136.4)
+  expect(@dietaVegana.alimentoTotal.prot).to eq(121.7)
+  expect(@dietaVegana.idr).to eq(true)
+  expect(@dietaVegana.alimentoTotal.emisiones).to eq(12.4)
+  expect(@dietaVegana.alimentoTotal.terreno).to eq(36.3)
+
+end
+
 end
 end
