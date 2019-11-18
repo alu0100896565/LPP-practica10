@@ -21,6 +21,7 @@ RSpec.describe Food do
     @nuez = Food::Alimentos.new({ :nombre => "Nuez", :prot => 20.0, :carbs => 21.0, :lip => 54.0, :emisiones => 0.3, :terreno => 7.9})
     @comidita = [@lentejas, @pollo, @nuez, @tofu, @queso, @huevos, @salmon, @chocolate, @cafe, @cerveza, @carneVaca, @carneCordero, @salmon, @leche]
     @dietita = Food::Dieta.new("Dietita", "hombre", @comidita)
+    @nodo = Food::Node.new(0,nil,nil)
     
   end
 

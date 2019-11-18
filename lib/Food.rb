@@ -68,6 +68,9 @@ module Food
     
   end
 
+  Node = Struct.new(:value, :next, :prev) do 
 
+
+  end
 
 end
