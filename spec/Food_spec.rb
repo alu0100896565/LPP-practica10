@@ -177,6 +177,12 @@ context "Probando la clase List" do
   
   end
 
+  it "Se puede insertar varios elemento en la lista" do
+    expect(@lista.respond_to?:insert_various_head).to eq(true)
+    expect(@lista.respond_to?:insert_various_tail).to eq(true)
+  
+  end
+
 end
 
 end
