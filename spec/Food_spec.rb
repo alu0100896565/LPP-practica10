@@ -22,7 +22,7 @@ RSpec.describe Food do
     @comidita = [@lentejas, @pollo, @nuez, @tofu, @queso, @huevos, @salmon, @chocolate, @cafe, @cerveza, @carneVaca, @carneCordero, @salmon, @leche]
     @dietita = Food::Dieta.new("Dietita", "hombre", @comidita)
     @nodo = Food::Node.new(0,nil,nil)
-    
+
   end
 
   context "Probando la clase Alimentos" do
@@ -138,5 +138,12 @@ context "Probando la estructura Node " do
     expect(@nodo.instance_of? Food::Node).to eq true
   end
 
+  it "La estructura Node tiene los atributos dato, siguiente y previo" do
+
+    expect(@nodo.respond_to?:value).to eq(true)
+    expect(@nodo.respond_to?:next).to eq(true)
+    expect(@nodo.respond_to?:prev).to eq(true)
+  
+  end
 end
 end
