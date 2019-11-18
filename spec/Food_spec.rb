@@ -204,6 +204,18 @@ context "Probando la clase List" do
     expect(@lista.extract_head.value).to eq(2)
   end
 
+  it "Se pueden extraer exlementos de la cola de la lista" do
+    expect(@lista.respond_to?:extract_tail).to eq(true)
+    @lista2 = Food::List.new()
+    expect(@lista2.empty).to eq(true)
+    @lista2.insert_head(@nodo1)
+    @lista2.insert_tail(@nodo2)
+    expect(@lista2.recorrerLista).to eq(" 1 2")
+    expect(@lista2.extract_tail.value).to eq(2)
+    expect(@lista2.extract_tail.value).to eq(1)
+    
+  end
+
 end
 
 end
