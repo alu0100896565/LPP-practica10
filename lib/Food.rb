@@ -160,6 +160,17 @@ module Food
       return nodo
     end
 
+    def recorrerLista
+
+      nodo=@head
+      content = ""
+      while nodo!=nil do
+        content += " " + nodo.value.to_s
+        nodo = nodo.next
+      end
+      return content
+    end
+
 end
 
 end
