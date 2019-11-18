@@ -113,11 +113,17 @@ module Food
     end
 
     def insert_various_head(arrayNodos)
-
+      raise TypeError, "Se espera como argumento un array" unless arrayNodos.is_a?Array
+      for i in arrayNodos do
+        self.insert_head(i)
+      end
     end
-
+    
     def insert_various_tail(arrayNodos)
-
+      raise TypeError, "Se espera como argumento un array" unless arrayNodos.is_a?Array
+      for i in arrayNodos do
+        self.insert_tail(i)
+      end
     end
 
 end
