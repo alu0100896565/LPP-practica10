@@ -159,6 +159,12 @@ context "Probando la clase List" do
     expect(@lista.respond_to?:tail).to eq(true)
   end
 
+  it "Se puede insertar un elemento en la lista" do
+    expect(@lista.respond_to?:insert_head).to eq(true)
+    expect(@lista.respond_to?:insert_tail).to eq(true)
+  
+  end
+
 end
 
 end
