@@ -198,6 +198,12 @@ context "Probando la clase List" do
   
   end
 
+  it "Se pueden extraer exlementos de la cabeza de la lista" do
+    expect(@lista.respond_to?:extract_head).to eq(true)
+    expect(@lista.extract_head.value).to eq(1)
+    expect(@lista.extract_head.value).to eq(2)
+  end
+
 end
 
 end
