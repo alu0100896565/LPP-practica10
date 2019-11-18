@@ -165,6 +165,16 @@ context "Probando la clase List" do
   
   end
 
+  it "Los metodos de insertar funcionan correctamente" do
+
+  
+    @lista.insert_head(@nodo1)
+    expect(@lista.head.value).to eq(1)
+    @lista.insert_tail(@nodo2)
+    expect(@lista.tail.value).to eq(2)
+  
+  end
+
 end
 
 end
