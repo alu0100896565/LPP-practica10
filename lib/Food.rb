@@ -80,12 +80,36 @@ module Food
       @tail = nil
     end
 
-    def insert_head()
-
+    def empty
+      if @head == nil && @tail == nil
+        return true
+      else
+        return false
+      end
     end
-
-    def insert_tail()
-
+    
+    def insert_head(nodo)
+      raise TypeError, "Se espera como argumento un nodo: Node" unless nodo.is_a?Node
+      if self.empty
+        @head = nodo
+        @tail = nodo
+      else 
+        @head.prev = nodo
+        nodo.next = @head
+        @head = nodo
+      end
+    end
+    
+    def insert_tail(nodo)
+      raise TypeError, "Se espera como argumento un nodo: Node" unless nodo.is_a?Node
+      if self.empty
+        @head = nodo
+        @tail = nodo
+      else 
+        @tail.next = nodo
+        nodo.prev = @tail
+        @tail = nodo
+      end
     end
 
 end

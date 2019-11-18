@@ -23,6 +23,8 @@ RSpec.describe Food do
     @dietita = Food::Dieta.new("Dietita", "hombre", @comidita)
     @nodo = Food::Node.new(0,nil,nil)
     @lista = Food::List.new()
+    @nodo1 = Food::Node.new(1,nil,nil)
+    @nodo2 = Food::Node.new(2,nil,nil)
 
   end
 
