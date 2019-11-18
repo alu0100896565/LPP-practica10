@@ -112,6 +112,14 @@ module Food
       end
     end
 
+    def insert_various_head(arrayNodos)
+
+    end
+
+    def insert_various_tail(arrayNodos)
+
+    end
+
 end
 
 end
