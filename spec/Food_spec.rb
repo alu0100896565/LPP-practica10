@@ -154,6 +154,11 @@ context "Probando la clase List" do
     expect(@lista.instance_of? Food::List).to eq(true)
   end
 
+  it "La clase List tiene cabeza y cola" do
+    expect(@lista.respond_to?:head).to eq(true)
+    expect(@lista.respond_to?:tail).to eq(true)
+  end
+
 end
 
 end
