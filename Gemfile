@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in food.gemspec
+# Specify your gem's dependencies in Food.gemspec
 gemspec

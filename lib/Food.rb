@@ -1,6 +1,7 @@
+require "Food/version"
 
-
-
+module Food
+  class Error < StandardError; end
   class Alimentos
 
     attr_reader :nombre, :emisiones, :terreno, :prot, :carbs, :lip
@@ -65,5 +66,8 @@
 
     end
     
-      end
+  end
 
+
+
+end

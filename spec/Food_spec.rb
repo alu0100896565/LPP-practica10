@@ -1,28 +1,32 @@
-require 'food'
-RSpec.describe Alimentos do
+RSpec.describe Food do
+  it "has a version number" do
+    expect(Food::VERSION).not_to be nil
+  end
+
   before (:all) do        
-    @lentejas = Alimentos.new({ :nombre => "lentejas", :prot => 23.5, :carbs => 52.0, :lip => 1.4, :emisiones => 0.4, :terreno => 3.4})
-    @carneVaca = Alimentos.new({ :nombre => "Carne de vaca", :prot => 21.1, :carbs => 0.0, :lip => 3.1, :emisiones => 50.0, :terreno => 164.0})
-    @carneCordero = Alimentos.new({ :nombre => "Carne de cordero", :prot => 18.0, :carbs => 0.0, :lip => 17.0, :emisiones => 20.0, :terreno => 185.0})
-    @camarones = Alimentos.new({ :nombre => "Camarones", :prot => 17.6, :carbs => 1.5, :lip => 0.6, :emisiones => 18.0, :terreno => 2.0})
-    @chocolate = Alimentos.new({ :nombre => "Chocolate", :prot => 5.3, :carbs => 47.0, :lip => 30.0, :emisiones => 2.3, :terreno => 3.4})
-    @salmon = Alimentos.new({ :nombre => "Salmon", :prot => 19.9, :carbs => 0.0, :lip => 13.6, :emisiones => 6.0, :terreno => 3.7})
-    @cerdo = Alimentos.new({ :nombre => "Cerdo", :prot => 21.5, :carbs => 0.0, :lip => 6.3, :emisiones => 7.6, :terreno => 11.0})
-    @pollo = Alimentos.new({ :nombre => "Pollo", :prot => 20.6, :carbs => 0.0, :lip => 5.6, :emisiones => 5.7, :terreno => 7.1})
-    @queso = Alimentos.new({ :nombre => "Queso", :prot => 25.0, :carbs => 1.3, :lip => 33.0, :emisiones => 11.0, :terreno => 41.0})
-    @cerveza = Alimentos.new({ :nombre => "Cerveza", :prot => 0.5, :carbs => 3.6, :lip => 0.0, :emisiones => 0.24, :terreno => 0.22})
-    @leche = Alimentos.new({ :nombre => "Leche de vaca", :prot => 3.3, :carbs => 4.8, :lip => 3.2, :emisiones => 3.2, :terreno => 8.9})
-    @huevos = Alimentos.new({ :nombre => "Huevos", :prot => 13.0, :carbs => 1.1, :lip => 11.0, :emisiones => 4.2, :terreno => 5.7})
-    @cafe = Alimentos.new({ :nombre => "Cafe", :prot => 0.1, :carbs => 0.0, :lip => 0.0, :emisiones => 0.4, :terreno => 0.3})
-    @tofu = Alimentos.new({ :nombre => "Tofu", :prot => 8.0, :carbs => 1.9, :lip => 4.8, :emisiones => 2.0, :terreno => 2.2})
-    @nuez = Alimentos.new({ :nombre => "Nuez", :prot => 20.0, :carbs => 21.0, :lip => 54.0, :emisiones => 0.3, :terreno => 7.9})
+    @lentejas = Food::Alimentos.new({ :nombre => "lentejas", :prot => 23.5, :carbs => 52.0, :lip => 1.4, :emisiones => 0.4, :terreno => 3.4})
+    @carneVaca = Food::Alimentos.new({ :nombre => "Carne de vaca", :prot => 21.1, :carbs => 0.0, :lip => 3.1, :emisiones => 50.0, :terreno => 164.0})
+    @carneCordero = Food::Alimentos.new({ :nombre => "Carne de cordero", :prot => 18.0, :carbs => 0.0, :lip => 17.0, :emisiones => 20.0, :terreno => 185.0})
+    @camarones = Food::Alimentos.new({ :nombre => "Camarones", :prot => 17.6, :carbs => 1.5, :lip => 0.6, :emisiones => 18.0, :terreno => 2.0})
+    @chocolate = Food::Alimentos.new({ :nombre => "Chocolate", :prot => 5.3, :carbs => 47.0, :lip => 30.0, :emisiones => 2.3, :terreno => 3.4})
+    @salmon = Food::Alimentos.new({ :nombre => "Salmon", :prot => 19.9, :carbs => 0.0, :lip => 13.6, :emisiones => 6.0, :terreno => 3.7})
+    @cerdo = Food::Alimentos.new({ :nombre => "Cerdo", :prot => 21.5, :carbs => 0.0, :lip => 6.3, :emisiones => 7.6, :terreno => 11.0})
+    @pollo = Food::Alimentos.new({ :nombre => "Pollo", :prot => 20.6, :carbs => 0.0, :lip => 5.6, :emisiones => 5.7, :terreno => 7.1})
+    @queso = Food::Alimentos.new({ :nombre => "Queso", :prot => 25.0, :carbs => 1.3, :lip => 33.0, :emisiones => 11.0, :terreno => 41.0})
+    @cerveza = Food::Alimentos.new({ :nombre => "Cerveza", :prot => 0.5, :carbs => 3.6, :lip => 0.0, :emisiones => 0.24, :terreno => 0.22})
+    @leche = Food::Alimentos.new({ :nombre => "Leche de vaca", :prot => 3.3, :carbs => 4.8, :lip => 3.2, :emisiones => 3.2, :terreno => 8.9})
+    @huevos = Food::Alimentos.new({ :nombre => "Huevos", :prot => 13.0, :carbs => 1.1, :lip => 11.0, :emisiones => 4.2, :terreno => 5.7})
+    @cafe = Food::Alimentos.new({ :nombre => "Cafe", :prot => 0.1, :carbs => 0.0, :lip => 0.0, :emisiones => 0.4, :terreno => 0.3})
+    @tofu = Food::Alimentos.new({ :nombre => "Tofu", :prot => 8.0, :carbs => 1.9, :lip => 4.8, :emisiones => 2.0, :terreno => 2.2})
+    @nuez = Food::Alimentos.new({ :nombre => "Nuez", :prot => 20.0, :carbs => 21.0, :lip => 54.0, :emisiones => 0.3, :terreno => 7.9})
     @comidita = [@lentejas, @pollo, @nuez, @tofu, @queso, @huevos, @salmon, @chocolate, @cafe, @cerveza, @carneVaca, @carneCordero, @salmon, @leche]
-    @dietita = Dieta.new("Dietita", "hombre", @comidita)
+    @dietita = Food::Dieta.new("Dietita", "hombre", @comidita)
+    
   end
 
   context "Probando la clase Alimentos" do
     it "Se ha de poder instanciar un alimento" do
-      expect(@lentejas.instance_of? Alimentos).to eq(true)
+      expect(@lentejas.instance_of? Food::Alimentos).to eq(true)
     end
 
     it "Debe existir un nombre para el alimento" do
@@ -53,7 +57,7 @@ end
 
   context "Probando la clase Dieta" do
     it "Se ha de poder instanciar una dieta" do
-      expect(@dietita.instance_of? Dieta).to eq(true)
+      expect(@dietita.instance_of? Food::Dieta).to eq(true)
     end
 
     it "Una dieta debe tener un Nombre" do
@@ -71,7 +75,7 @@ end
 it "Se debe comprobar la suma de los valores de los alimentos de la dieta" do
 
   @lentejitas = [@lentejas, @lentejas]
-  @dietaLentejas = Dieta.new("Dietita", "hombre", @lentejitas)
+  @dietaLentejas = Food::Dieta.new("Dietita", "hombre", @lentejitas)
   
   @dietaLentejas.sumaAlimentos
 
@@ -106,7 +110,7 @@ it "Probar diferentas dietas para comprobar que superen el IDR y comprobar su im
 
   @dietaCarneArray = [@cerdo, @pollo, @carneCordero, @carneVaca, @queso, @huevos, @leche, @pollo, @cerdo, @cerdo, @cerdo, @carneCordero,
      @carneCordero, @queso, @leche, @carneVaca, @pollo, @cerdo]
-  @dietaCarne = Dieta.new("Dieta basada en carne", "hombre", @dietaCarneArray)
+  @dietaCarne = Food::Dieta.new("Dieta basada en carne", "hombre", @dietaCarneArray)
   @dietaCarne.sumaAlimentos
   expect(@dietaCarne.alimentoTotal.valorEnergetico).to eq(3093.7)
   expect(@dietaCarne.alimentoTotal.prot).to eq(335.1)
@@ -115,7 +119,7 @@ it "Probar diferentas dietas para comprobar que superen el IDR y comprobar su im
   expect(@dietaCarne.alimentoTotal.terreno).to eq(1064.8)
 
   @dietaVeganaArray = [@lentejas, @nuez, @tofu, @chocolate, @cafe, @nuez, @tofu, @tofu, @lentejas, @chocolate]
-  @dietaVegana = Dieta.new("Dieta Vegana", "hombre", @dietaVeganaArray)
+  @dietaVegana = Food::Dieta.new("Dieta Vegana", "hombre", @dietaVeganaArray)
   @dietaVegana.sumaAlimentos
   expect(@dietaVegana.alimentoTotal.valorEnergetico).to eq(3136.4)
   expect(@dietaVegana.alimentoTotal.prot).to eq(121.7)
@@ -124,6 +128,14 @@ it "Probar diferentas dietas para comprobar que superen el IDR y comprobar su im
   expect(@dietaVegana.alimentoTotal.terreno).to eq(36.3)
 
 end
+
+end
+
+context "Probando la estructura Node " do
+
+  it "Existe la estructura Node" do
+    expect(@nodo.instance_of? Food::Node).to eq true
+  end
 
 end
 end

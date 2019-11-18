@@ -1,12 +1,12 @@
 # Food
 
-Practica 6. Lenguajes y Paradigmas de Programación.
+Practica 7. Lenguajes y Paradigmas de Programación.
 Eduardo Suárez Ojeda
 Alu0100896565
 
 ## Usage
 
-Práctica en la que se calcula el valor tanto nutricional como el impacto ambiental de los alimentos y de dietas compuestas por los mismos.
+Práctica donde implementaremos la clase de listaas doblemente enlazadas y la estructura nodo de las mismas. Con ellas representaremos varios tipos de dieta diferente, cada una con un porcentaje de nutrientes determinado y estimar el impacto ambiental de cada una.
 
 ## License
 
