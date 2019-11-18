@@ -25,6 +25,8 @@ RSpec.describe Food do
     @lista = Food::List.new()
     @nodo1 = Food::Node.new(1,nil,nil)
     @nodo2 = Food::Node.new(2,nil,nil)
+    @nodo3 = Food::Node.new(3,nil,nil)
+    @nodoArray = [@nodo1, @nodo2, @nodo3]
 
   end
 
@@ -180,6 +182,19 @@ context "Probando la clase List" do
   it "Se puede insertar varios elemento en la lista" do
     expect(@lista.respond_to?:insert_various_head).to eq(true)
     expect(@lista.respond_to?:insert_various_tail).to eq(true)
+  
+  end
+
+  it "Los metodos de insertar varios funcionan correctamente" do
+
+  
+    @lista1 = Food::List.new()
+    @lista1.insert_various_head(@nodoArray)
+    expect(@lista1.head.value).to eq(3)
+    expect(@lista1.tail.value).to eq(1)
+    @lista1.insert_various_tail(@nodoArray)
+    expect(@lista1.head.value).to eq(3)
+    expect(@lista1.tail.value).to eq(3)
   
   end
 
