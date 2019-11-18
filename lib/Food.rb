@@ -143,6 +143,23 @@ module Food
       return nodo
     end
 
+    def extract_tail()
+
+      if self.empty
+        puts "La lista esta vacia"
+        return nil
+      end
+      nodo = @tail
+      @tail = @tail.prev
+      if @tail != nil
+        @tail.next = nil;
+      else @head = nil
+      end
+      nodo.prev = nil
+      nodo.next = nil
+      return nodo
+    end
+
 end
 
 end
