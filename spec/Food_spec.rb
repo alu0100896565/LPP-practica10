@@ -146,4 +146,13 @@ context "Probando la estructura Node " do
   
   end
 end
+
+context "Probando la clase List" do
+
+  it "Existe la clase lista" do
+    expect(@lista.instance_of? Food::List).to eq(true)
+  end
+
+end
+
 end
