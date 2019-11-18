@@ -79,6 +79,15 @@ module Food
       @head = nil
       @tail = nil
     end
+
+    def insert_head()
+
+    end
+
+    def insert_tail()
+
+    end
+
 end
 
 end
