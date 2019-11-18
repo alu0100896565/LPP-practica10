@@ -22,6 +22,7 @@ RSpec.describe Food do
     @comidita = [@lentejas, @pollo, @nuez, @tofu, @queso, @huevos, @salmon, @chocolate, @cafe, @cerveza, @carneVaca, @carneCordero, @salmon, @leche]
     @dietita = Food::Dieta.new("Dietita", "hombre", @comidita)
     @nodo = Food::Node.new(0,nil,nil)
+    @lista = Food::List.new()
 
   end
 

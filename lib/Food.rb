@@ -73,4 +73,12 @@ module Food
 
   end
 
+  class List
+    
+    def initialize()
+      
+    end
+
+end
+
 end
