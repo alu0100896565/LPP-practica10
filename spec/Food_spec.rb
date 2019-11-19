@@ -21,14 +21,7 @@ RSpec.describe Food::Alimentos do
     @cafe = Food::Alimentos.new({ :nombre => "Cafe", :prot => 0.1, :carbs => 0.0, :lip => 0.0, :emisiones => 0.4, :terreno => 0.3})
     @tofu = Food::Alimentos.new({ :nombre => "Tofu", :prot => 8.0, :carbs => 1.9, :lip => 4.8, :emisiones => 2.0, :terreno => 2.2})
     @nuez = Food::Alimentos.new({ :nombre => "Nuez", :prot => 20.0, :carbs => 21.0, :lip => 54.0, :emisiones => 0.3, :terreno => 7.9})
-    @comidita = [@lentejas, @pollo, @nuez, @tofu, @queso, @huevos, @salmon, @chocolate, @cafe, @cerveza, @carneVaca, @carneCordero, @salmon, @leche]
-    @dietita = Food::Dieta.new("Dietita", "hombre", @comidita)
-    @nodo = Food::Node.new(0,nil,nil)
-    @lista = Food::List.new()
-    @nodo1 = Food::Node.new(1,nil,nil)
-    @nodo2 = Food::Node.new(2,nil,nil)
-    @nodo3 = Food::Node.new(3,nil,nil)
-    @nodoArray = [@nodo1, @nodo2, @nodo3]
+    
 
   end
 
@@ -253,4 +246,18 @@ context "Probando la clase List" do
 
 end
 
+end
+
+RSpec.describe Food::Dieta_lista do
+  before(:all) do
+    @dietaL = Food::Dieta_lista.new
+  end
+
+context "Probando la clase Dieta_lista" do
+
+it "Existe la clase Dieta_lista" do
+  expect(@dietaL.instance_of? Food::Dieta_lista).to eq(true)
+end
+
+end
 end
