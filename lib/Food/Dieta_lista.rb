@@ -2,6 +2,7 @@ module Food
 
     class Dieta_lista < List
 
+        attr_reader :alimentoTotal
        def initialize(nombre)
 
         super()

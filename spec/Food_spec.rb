@@ -295,5 +295,16 @@ it "Crear el metodo suma_total para sumar todos los alimentos de la lista" do
   expect(@dietaL.respond_to?:suma_total).to eq(true)
 end
 
+it "Probar el metodo suma_total para sumar todos los alimentos de la lista" do
+  @dietaL.insert_headS(@lentejas)
+  @dietaL.insert_tailS(@pollo)
+  @dietaL.suma_total
+  expect(@dietaL.alimentoTotal.prot).to eq(44.10)
+  expect(@dietaL.alimentoTotal.carbs).to eq(52.00)
+  expect(@dietaL.alimentoTotal.lip).to eq(7.00)
+  expect(@dietaL.alimentoTotal.emisiones).to eq(6.10)
+  expect(@dietaL.alimentoTotal.terreno).to eq(10.50)
+end
+
 end
 end
