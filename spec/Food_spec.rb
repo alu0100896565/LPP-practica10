@@ -251,7 +251,7 @@ end
 RSpec.describe Food::Dieta_lista do
   before(:all) do
     
-    @dietaL = Food::Dieta_lista.new("Dieta de prueba")
+    @dietaL = Food::Dieta_lista.new("Dieta de prueba", "hombre")
     @lentejas = Food::Alimentos.new({ :nombre => "lentejas", :prot => 23.5, :carbs => 52.0, :lip => 1.4, :emisiones => 0.4, :terreno => 3.4})
     @carneVaca = Food::Alimentos.new({ :nombre => "Carne de vaca", :prot => 21.1, :carbs => 0.0, :lip => 3.1, :emisiones => 50.0, :terreno => 164.0})
     @carneCordero = Food::Alimentos.new({ :nombre => "Carne de cordero", :prot => 18.0, :carbs => 0.0, :lip => 17.0, :emisiones => 20.0, :terreno => 185.0})

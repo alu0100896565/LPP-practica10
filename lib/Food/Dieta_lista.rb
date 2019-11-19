@@ -3,11 +3,11 @@ module Food
     class Dieta_lista < List
 
         attr_reader :alimentoTotal
-       def initialize(nombre)
+       def initialize(nombre, genero)
 
         super()
         @alimentoTotal = Alimentos.new({ :nombre => nombre, :prot => 0.0, :carbs => 0.0, :lip => 0.0, :emisiones => 0.0, :terreno => 0.0})
-
+        @genero = genero
     end
     
     def insert_headS(alimento)
@@ -33,7 +33,16 @@ module Food
         
     end
 
+    def idr
     
+        if @genero = "hombre" && @alimentoTotal.prot >= 54.0 && @alimentoTotal.valorEnergetico >= 3000
+          return true
+        elseif @genero = "mujer" && @alimentoTotal.prot >= 41.0 && @alimentoTotal.valorEnergetico >= 2300
+          return true
+        else return false
+  
+        end
+      end
 
 end
 
