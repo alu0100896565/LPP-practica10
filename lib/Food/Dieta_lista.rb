@@ -21,6 +21,9 @@ module Food
         insert_tail(nodo)
     end
 
+    def suma_total
+
+    end
 end
 
 end
