@@ -2,9 +2,10 @@ module Food
 
     class Dieta_lista < List
 
-       def initialize
+       def initialize(nombre)
 
         super()
+        @alimentoTotal = Alimentos.new({ :nombre => nombre, :prot => 0.0, :carbs => 0.0, :lip => 0.0, :emisiones => 0.0, :terreno => 0.0})
 
     end
     
