@@ -52,6 +52,9 @@ module Food
         "Proteinas: #{por_prot}%, Carbohidratos: #{por_carbs}%, Lipidos: #{por_lip}%."
       end
 
+      def emisionesAnuales
+        @alimentoTotal.emisiones * 365
+      end
 end
 
 end
