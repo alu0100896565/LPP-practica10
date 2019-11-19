@@ -25,7 +25,7 @@ RSpec.describe Food::Alimentos do
 
   end
 
-  context "Probando la clase Alimentos" do
+  context "Probando la clase Alimentos: atributos" do
     it "Se ha de poder instanciar un alimento" do
       expect(@lentejas.instance_of? Food::Alimentos).to eq(true)
     end
@@ -41,7 +41,8 @@ RSpec.describe Food::Alimentos do
     it "Debe existir un atributo con la cantidad de terreno usada" do
       expect(@lentejas.terreno).to eq(3.4)
     end
-
+  end
+  context "Probando la clase Alimentos: metodos" do
     it "Debe existir un metodo para obtener el aimento formateado" do
       expect(@lentejas.to_s).to eq("lentejas: { prot: 23.5, carbs: 52.0, lip: 1.4, emisiones: 0.4, terreno: 3.4 }")
     end
@@ -78,7 +79,7 @@ RSpec.describe Food::Dieta do
     @comidita = [@lentejas, @pollo, @nuez, @tofu, @queso, @huevos, @salmon, @chocolate, @cafe, @cerveza, @carneVaca, @carneCordero, @salmon, @leche]
     @dietita = Food::Dieta.new("Dietita", "hombre", @comidita)
     end
-   context "Probando la clase Dieta" do
+   context "Probando la clase Dieta: atributos" do
     it "Se ha de poder instanciar una dieta" do
       expect(@dietita.instance_of? Food::Dieta).to eq(true)
     end
@@ -94,7 +95,9 @@ end
 it "Una dieta debe contener alimentos" do
   expect(@dietita.respond_to?(:alimentos)).to eq(true)
 end
+end
 
+context "Probando la clase Dieta: metodos" do
 it "Se debe comprobar la suma de los valores de los alimentos de la dieta" do
 
   @lentejitas = [@lentejas, @lentejas]
@@ -180,7 +183,7 @@ context "Probando la estructura Node " do
   end
 end
 
-context "Probando la clase List" do
+context "Probando la clase List: atributos" do
 
   it "Existe la clase lista" do
     expect(@lista.instance_of? Food::List).to eq(true)
@@ -196,6 +199,9 @@ context "Probando la clase List" do
     expect(@lista.respond_to?:insert_tail).to eq(true)
   
   end
+end
+
+  context "Probando la clase List: metodos" do
 
   it "Los metodos de insertar funcionan correctamente" do
 
@@ -269,7 +275,7 @@ RSpec.describe Food::Dieta_lista do
     @nuez = Food::Alimentos.new({ :nombre => "Nuez", :prot => 20.0, :carbs => 21.0, :lip => 54.0, :emisiones => 0.3, :terreno => 7.9})
   end
 
-context "Probando la clase Dieta_lista" do
+context "Probando la clase Dieta_lista: atributos" do
 
 it "Existe la clase Dieta_lista" do
   expect(@dietaL.instance_of? Food::Dieta_lista).to eq(true)
@@ -280,7 +286,7 @@ it "La clase Dieta_lista es hija de la clase List" do
 end
 end
 
-context "Funciones de la clase Dieta_list" do
+context "Probando la clase Dieta_lista: metodos" do
 it "La clase Dieta_lista debe poder insertar alimentos por cabeza y cola" do
   @dietaL.insert_headS(@lentejas)
   @dietaL.insert_tailS(@pollo)
