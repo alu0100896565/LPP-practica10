@@ -24,6 +24,13 @@ module Food
 
     def suma_total
 
+        nodo=@head
+        
+        while nodo!=nil do
+          @alimentoTotal += nodo.value
+          nodo = nodo.next
+        end
+        
     end
 end
 
