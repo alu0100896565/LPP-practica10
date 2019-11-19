@@ -310,5 +310,9 @@ it "Probar el metodo que comprueba si se cumple el IDR" do
   expect(@dietaL.idr).to eq(false)
 end
 
+it "Probar el metodo que muestra el porcentaje de energia obtenido por cada tipo de nutriente" do
+  expect(@dietaL.porcentaje).to eq(" ")
+end
+
 end
 end
