@@ -43,7 +43,14 @@ module Food
   
         end
       end
-      
+
+      def porcentajes
+        por_prot = (((@alimentoTotal.prot * 4) / @alimentoTotal.valorEnergetico) * 100.00).round(3)
+        por_carbs = (((@alimentoTotal.carbs * 4) / @alimentoTotal.valorEnergetico) * 100.00).round(3)
+        por_lip = (((@alimentoTotal.lip * 9) / @alimentoTotal.valorEnergetico) * 100.00).round(3)
+
+        "Proteinas: #{por_prot}%, Carbohidratos: #{por_carbs}%, Lipidos: #{por_lip}%."
+      end
 
 end
 

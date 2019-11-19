@@ -304,6 +304,7 @@ it "Probar el metodo suma_total para sumar todos los alimentos de la lista" do
   expect(@dietaL.alimentoTotal.lip).to eq(7.00)
   expect(@dietaL.alimentoTotal.emisiones).to eq(6.10)
   expect(@dietaL.alimentoTotal.terreno).to eq(10.50)
+  expect(@dietaL.alimentoTotal.valorEnergetico).to eq(447.4)
 end
 
 it "Probar el metodo que comprueba si se cumple el IDR" do
@@ -311,7 +312,7 @@ it "Probar el metodo que comprueba si se cumple el IDR" do
 end
 
 it "Probar el metodo que muestra el porcentaje de energia obtenido por cada tipo de nutriente" do
-  expect(@dietaL.porcentaje).to eq(" ")
+  expect(@dietaL.porcentajes).to eq("Proteinas: 39.428%, Carbohidratos: 46.491%, Lipidos: 14.081%.")
 end
 
 end
