@@ -7,6 +7,7 @@ module Food
         super()
 
     end
+    
 
 end
 
