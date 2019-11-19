@@ -250,8 +250,8 @@ end
 
 RSpec.describe Food::Dieta_lista do
   before(:all) do
-    @listaEjemp = Food::List.new
-    @dietaL = Food::Dieta_lista.new(@listaEjemp)
+    
+    @dietaL = Food::Dieta_lista.new
   end
 
 context "Probando la clase Dieta_lista" do
@@ -260,8 +260,8 @@ it "Existe la clase Dieta_lista" do
   expect(@dietaL.instance_of? Food::Dieta_lista).to eq(true)
 end
 
-it "La clase Dieta_lista admite una lista como argumento" do
-  expect(@dietaL.instance_of? Food::Dieta_lista).to eq(true)
+it "La clase Dieta_lista es hija de la clase List" do
+  expect(Food::Dieta_lista.superclass).to eq(Food::List)
 end
 
 end
