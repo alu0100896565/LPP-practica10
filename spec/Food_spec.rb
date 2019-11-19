@@ -291,5 +291,9 @@ it "Comprobar que los metodos introducidos concuerdan" do
   expect(@dietaL.extract_tail.value.to_s).to eq(@pollo.to_s)
 end
 
+it "Crear el metodo suma_total para sumar todos los alimentos de la lista" do
+  expect(@dietaL.respond_to?:suma_total).to eq(true)
+end
+
 end
 end
