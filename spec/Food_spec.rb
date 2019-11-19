@@ -315,5 +315,10 @@ it "Probar el metodo que muestra el porcentaje de energia obtenido por cada tipo
   expect(@dietaL.porcentajes).to eq("Proteinas: 39.428%, Carbohidratos: 46.491%, Lipidos: 14.081%.")
 end
 
+it "Crear metodos para comprobar las emisiones de la dieta y el terreno usado diariamente" do
+  expect(@dietaL.alimentoTotal.emisiones).to eq(6.10)
+  expect(@dietaL.alimentoTotal.terreno).to eq(10.50)
+end
+
 end
 end
