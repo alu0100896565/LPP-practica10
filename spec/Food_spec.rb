@@ -280,8 +280,8 @@ it "La clase Dieta_lista es hija de la clase List" do
 end
 
 it "La clase Dieta_lista debe poder insertar alimentos por cabeza y cola" do
-  @dietaL.insert_head(@lentejas)
-  @dietaL.insert_tail(@lentejas)
+  @dietaL.insert_headS(@lentejas)
+  @dietaL.insert_tailS(@lentejas)
   
 end
 
