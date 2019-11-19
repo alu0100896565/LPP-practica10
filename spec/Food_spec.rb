@@ -331,4 +331,17 @@ it "Crear el metodo para observar las emisiones anuales de la dieta" do
 end
 
 end
+
+context "Probando las diferentes dietas" do
+  it "Probando la dieta española" do
+    @dietaEsp = Food::Dieta_lista.new("Dieta Española", "mujer")
+    
+    expect(@dietaEsp.idr).to eq(true)
+    expect(@dietaEsp.porcentajes).to eq("Proteinas: 20.000%, Carbohidratos: 40.000%, Lipidos: 40.000%.")
+    expect(@dietaEsp.emisiones).to eq(0)
+    expect(@dietaEsp.terreno).to eq(0)
+    expect(@dietaEsp.emisionesAnuales).to eq(0)
+  end
+end
+
 end
