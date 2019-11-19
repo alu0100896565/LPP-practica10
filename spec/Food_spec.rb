@@ -306,5 +306,9 @@ it "Probar el metodo suma_total para sumar todos los alimentos de la lista" do
   expect(@dietaL.alimentoTotal.terreno).to eq(10.50)
 end
 
+it "Probar el metodo que comprueba si se cumple el IDR" do
+  expect(@dietaL.idr).to eq(false)
+end
+
 end
 end
