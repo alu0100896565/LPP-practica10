@@ -320,5 +320,9 @@ it "Crear metodos para comprobar las emisiones de la dieta y el terreno usado di
   expect(@dietaL.alimentoTotal.terreno).to eq(10.50)
 end
 
+it "Crear el metodo para observar las emisiones anuales de la dieta" do
+  expect(@dietaL.emisionesAnuales).to eq(6.10)
+end
+
 end
 end
