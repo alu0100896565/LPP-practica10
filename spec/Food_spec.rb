@@ -278,11 +278,17 @@ end
 it "La clase Dieta_lista es hija de la clase List" do
   expect(Food::Dieta_lista.superclass).to eq(Food::List)
 end
+end
 
+context "Funciones de la clase Dieta_list" do
 it "La clase Dieta_lista debe poder insertar alimentos por cabeza y cola" do
   @dietaL.insert_headS(@lentejas)
-  @dietaL.insert_tailS(@lentejas)
-  
+  @dietaL.insert_tailS(@pollo)
+end
+
+it "Comprobar que los metodos introducidos concuerdan" do
+  expect(@dietaL.extract_head.value.to_s).to eq(@lentejas.to_s)
+  expect(@dietaL.extract_tail.value.to_s).to eq(@pollo.to_s)
 end
 
 end
