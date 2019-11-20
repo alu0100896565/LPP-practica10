@@ -398,6 +398,29 @@ context "Probando las diferentes dietas" do
     expect(@dietaVeg.emisionesAnuales).to eq(8322.0)
   end
 
+  it "Probando la dieta vegetaliana" do
+    @dietaVegl = Food::Dieta_lista.new("Dieta Española", "mujer")
+    @dietaVegl.insert_headS(@lentejas)
+    @dietaVegl.insert_headS(@leche)
+    @dietaVegl.insert_headS(@chocolate)
+    @dietaVegl.insert_headS(@huevos)
+    @dietaVegl.insert_headS(@chocolate)
+    @dietaVegl.insert_headS(@lentejas)
+    @dietaVegl.insert_headS(@lentejas)
+    @dietaVegl.insert_headS(@leche)
+    @dietaVegl.insert_headS(@leche)
+    @dietaVegl.insert_headS(@leche)
+    
+
+    @dietaVegl.suma_total
+    expect(@dietaVegl.alimentoTotal.valorEnergetico).to eq(2300.0)
+    expect(@dietaVegl.idr).to eq(true)
+    expect(@dietaVegl.porcentajes).to eq("Proteinas: 20%, Carbohidratos: 40%, Lipidos: 40%.")
+    expect(@dietaVegl.alimentoTotal.emisiones).to eq(22.8)
+    expect(@dietaVegl.alimentoTotal.terreno).to eq(58.3)
+    expect(@dietaVegl.emisionesAnuales).to eq(8322.0)
+  end
+
 end
 
 end
