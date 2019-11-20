@@ -414,10 +414,10 @@ context "Probando las diferentes dietas" do
     @dietaVegl.suma_total
     #expect(@dietaVegl.alimentoTotal.valorEnergetico).to eq(2300.0)
     expect(@dietaVegl.idr).to eq(true)
-    expect(@dietaVegl.porcentajes).to eq("Proteinas: 20%, Carbohidratos: 40%, Lipidos: 40%.")
-    expect(@dietaVegl.alimentoTotal.emisiones).to eq(22.8)
-    expect(@dietaVegl.alimentoTotal.terreno).to eq(58.3)
-    expect(@dietaVegl.emisionesAnuales).to eq(8322.0)
+    expect(@dietaVegl.porcentajes).to eq("Proteinas: 19.6%, Carbohidratos: 52.852%, Lipidos: 27.548%.")
+    expect(@dietaVegl.alimentoTotal.emisiones).to eq(8.6)
+    expect(@dietaVegl.alimentoTotal.terreno).to eq(22.9)
+    expect(@dietaVegl.emisionesAnuales).to eq(3139.0)
   end
 
 end
