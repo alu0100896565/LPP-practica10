@@ -335,12 +335,24 @@ end
 context "Probando las diferentes dietas" do
   it "Probando la dieta española" do
     @dietaEsp = Food::Dieta_lista.new("Dieta Española", "mujer")
+    @dietaEsp.insert_headS(@lentejas)
+    @dietaEsp.insert_headS(@cerdo)
+    @dietaEsp.insert_headS(@chocolate)
+    @dietaEsp.insert_headS(@carneCordero)
+    @dietaEsp.insert_headS(@chocolate)
+    @dietaEsp.insert_headS(@lentejas)
+    @dietaEsp.insert_headS(@lentejas)
+    @dietaEsp.insert_headS(@cerdo)
+    @dietaEsp.insert_headS(@leche)
     
+
+    @dietaEsp.suma_total
+    #expect(@dietaEsp.alimentoTotal.valorEnergetico).to eq(447.4)
     expect(@dietaEsp.idr).to eq(true)
-    expect(@dietaEsp.porcentajes).to eq("Proteinas: 20.000%, Carbohidratos: 40.000%, Lipidos: 40.000%.")
-    expect(@dietaEsp.emisiones).to eq(0)
-    expect(@dietaEsp.terreno).to eq(0)
-    expect(@dietaEsp.emisionesAnuales).to eq(0)
+    expect(@dietaEsp.porcentajes).to eq("Proteinas: 23.51%, Carbohidratos: 41.2%, Lipidos: 35.29%.")
+    expect(@dietaEsp.alimentoTotal.emisiones).to eq(44.2)
+    expect(@dietaEsp.alimentoTotal.terreno).to eq(232.9)
+    expect(@dietaEsp.emisionesAnuales).to eq(16133.0)
   end
 end
 
