@@ -376,7 +376,7 @@ context "Probando las diferentes dietas" do
   end
 
   it "Probando la dieta vegetariana" do
-    @dietaVeg = Food::Dieta_lista.new("Dieta Española", "mujer")
+    @dietaVeg = Food::Dieta_lista.new("Dieta Vegetariana", "mujer")
     @dietaVeg.insert_headS(@lentejas)
     @dietaVeg.insert_headS(@leche)
     @dietaVeg.insert_headS(@chocolate)
@@ -399,7 +399,7 @@ context "Probando las diferentes dietas" do
   end
 
   it "Probando la dieta vegetaliana" do
-    @dietaVegl = Food::Dieta_lista.new("Dieta Española", "mujer")
+    @dietaVegl = Food::Dieta_lista.new("Dieta Vegetaliana", "mujer")
     @dietaVegl.insert_headS(@lentejas)
     @dietaVegl.insert_headS(@chocolate)    
     @dietaVegl.insert_headS(@chocolate)
@@ -418,6 +418,20 @@ context "Probando las diferentes dietas" do
     expect(@dietaVegl.alimentoTotal.emisiones).to eq(8.6)
     expect(@dietaVegl.alimentoTotal.terreno).to eq(22.9)
     expect(@dietaVegl.emisionesAnuales).to eq(3139.0)
+  end
+
+  it "Probando la dieta  locura por la carne" do
+    @dietaCar = Food::Dieta_lista.new("Dieta Carne", "mujer")
+
+
+
+    @dietaCar.suma_total
+    expect(@dietaCar.alimentoTotal.valorEnergetico).to eq(2300.0)
+    expect(@dietaCar.idr).to eq(true)
+    expect(@dietaCar.porcentajes).to eq("Proteinas: 19.6%, Carbohidratos: 52.852%, Lipidos: 27.548%.")
+    expect(@dietaCar.alimentoTotal.emisiones).to eq(8.6)
+    expect(@dietaCar.alimentoTotal.terreno).to eq(22.9)
+    expect(@dietaCar.emisionesAnuales).to eq(3139.0)
   end
 
 end
