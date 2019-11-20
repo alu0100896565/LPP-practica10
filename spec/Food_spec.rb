@@ -354,6 +354,20 @@ context "Probando las diferentes dietas" do
     expect(@dietaEsp.alimentoTotal.terreno).to eq(232.9)
     expect(@dietaEsp.emisionesAnuales).to eq(16133.0)
   end
+
+  it "Probando la dieta vasca" do
+    @dietaVas = Food::Dieta_lista.new("Dieta Vasca", "mujer")
+    
+    
+
+    @dietaVas.suma_total
+    expect(@dietaVas.alimentoTotal.valorEnergetico).to eq(447.4)
+    expect(@dietaVas.idr).to eq(true)
+    expect(@dietaVas.porcentajes).to eq("Proteinas: 15%, Carbohidratos: 60%, Lipidos: 25%.")
+    expect(@dietaVas.alimentoTotal.emisiones).to eq(44.2)
+    expect(@dietaVas.alimentoTotal.terreno).to eq(232.9)
+    expect(@dietaVas.emisionesAnuales).to eq(16133.0)
+  end
 end
 
 end
