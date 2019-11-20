@@ -422,16 +422,25 @@ context "Probando las diferentes dietas" do
 
   it "Probando la dieta  locura por la carne" do
     @dietaCar = Food::Dieta_lista.new("Dieta Carne", "mujer")
-
-
+    @dietaCar.insert_headS(@cerdo)
+    @dietaCar.insert_headS(@carneCordero)
+    @dietaCar.insert_headS(@carneVaca)
+    @dietaCar.insert_headS(@pollo)
+    @dietaCar.insert_headS(@cerdo)
+    @dietaCar.insert_headS(@carneCordero)
+    @dietaCar.insert_headS(@carneVaca)
+    @dietaCar.insert_headS(@pollo)
+    @dietaCar.insert_headS(@chocolate)
+    @dietaCar.insert_headS(@chocolate)
+    @dietaCar.insert_headS(@lentejas)
 
     @dietaCar.suma_total
-    expect(@dietaCar.alimentoTotal.valorEnergetico).to eq(2300.0)
+    #expect(@dietaCar.alimentoTotal.valorEnergetico).to eq(2300.0)
     expect(@dietaCar.idr).to eq(true)
-    expect(@dietaCar.porcentajes).to eq("Proteinas: 19.6%, Carbohidratos: 52.852%, Lipidos: 27.548%.")
-    expect(@dietaCar.alimentoTotal.emisiones).to eq(8.6)
-    expect(@dietaCar.alimentoTotal.terreno).to eq(22.9)
-    expect(@dietaCar.emisionesAnuales).to eq(3139.0)
+    expect(@dietaCar.porcentajes).to eq("Proteinas: 31.458%, Carbohidratos: 23.373%, Lipidos: 45.169%.")
+    expect(@dietaCar.alimentoTotal.emisiones).to eq(171.6)
+    expect(@dietaCar.alimentoTotal.terreno).to eq(744.4)
+    expect(@dietaCar.emisionesAnuales).to eq(62634.0)
   end
 
 end
