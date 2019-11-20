@@ -357,16 +357,22 @@ context "Probando las diferentes dietas" do
 
   it "Probando la dieta vasca" do
     @dietaVas = Food::Dieta_lista.new("Dieta Vasca", "mujer")
-    
+    @dietaVas.insert_headS(@lentejas)
+    @dietaVas.insert_headS(@lentejas)
+    @dietaVas.insert_headS(@lentejas)
+    @dietaVas.insert_headS(@chocolate)
+    @dietaVas.insert_headS(@lentejas)
+    @dietaVas.insert_headS(@lentejas)
+    @dietaVas.insert_headS(@chocolate)
     
 
     @dietaVas.suma_total
-    expect(@dietaVas.alimentoTotal.valorEnergetico).to eq(447.4)
+    #expect(@dietaVas.alimentoTotal.valorEnergetico).to eq(447.4)
     expect(@dietaVas.idr).to eq(true)
-    expect(@dietaVas.porcentajes).to eq("Proteinas: 15%, Carbohidratos: 60%, Lipidos: 25%.")
-    expect(@dietaVas.alimentoTotal.emisiones).to eq(44.2)
-    expect(@dietaVas.alimentoTotal.terreno).to eq(232.9)
-    expect(@dietaVas.emisionesAnuales).to eq(16133.0)
+    expect(@dietaVas.porcentajes).to eq("Proteinas: 20.242%, Carbohidratos: 55.937%, Lipidos: 23.821%.")
+    expect(@dietaVas.alimentoTotal.emisiones).to eq(6.6)
+    expect(@dietaVas.alimentoTotal.terreno).to eq(23.8)
+    expect(@dietaVas.emisionesAnuales).to eq(2409.0)
   end
 end
 
