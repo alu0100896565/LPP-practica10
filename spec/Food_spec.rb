@@ -276,6 +276,10 @@ context "Añadiendo Enumerable a la clase List" do
   it "Comprobar que se añade el mixin Enumerable en la clase List" do
     expect(Food::List.ancestors.select {|o| o.class == Module }).to eq([Enumerable, Kernel])
   end
+
+  it "Añadiendo el metodo each en List" do
+    expect(@lista.respond_to?:each).to eq(true)
+  end
 end
 
 end
