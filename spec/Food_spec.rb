@@ -57,9 +57,12 @@ RSpec.describe Food::Alimentos do
   end
     context "Añadiendo Comparable a la clase Alimentos" do
       it "El mixin Comparable esta incluido en la clase Alimentos" do
-        expect(Food::Alimentos.ancestors.select {|o| o.class == Module }).to eq([Comparable, Kernel])
-          
+        expect(Food::Alimentos.ancestors.select {|o| o.class == Module }).to eq([Comparable, Kernel])       
         end
+
+      it "Se ha sobrecargado el operador <=>" do
+        expect(@lentejas<=>@leche).to eq(true)
+      end
       end
     end
     
