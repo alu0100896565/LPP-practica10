@@ -63,6 +63,15 @@ RSpec.describe Food::Alimentos do
       it "Se ha sobrecargado el operador <=>" do
         expect(@lentejas<=>@leche).to eq(1)
       end
+
+      it "Pruebas de los operadores de Comparable" do
+        expect(@lentejas>@leche).to eq(true)
+        expect(@cafe<@pollo).to eq(true)
+        expect(@lentejas==@lentejas).to eq(true)
+        expect(@lentejas>=@carneVaca).to eq(true)
+        expect(@carneCordero<=@lentejas).to eq(true)
+        expect(@tofu.between?(@cafe, @lentejas)).to eq(true)
+      end
       end
     end
     
