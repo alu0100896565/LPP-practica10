@@ -54,9 +54,17 @@ RSpec.describe Food::Alimentos do
     it "Debe ser posible sumar comidas para sumar sus valores de nutrientes e impacto ambiental" do
       expect((@lentejas+@lentejas).valorEnergetico).to eq(629.2)
     end
+  end
+    context "Añadiendo Comparable a la clase Alimentos" do
+      it "El mixin Comparable esta incluido en la clase Alimentos" do
+        expect(Food::Alimentos.ancestors.select {|o| o.class == Module }).to eq([Comparable, Kernel])
+          
+        end
+      end
+    end
     
-end
-end
+
+
 
 RSpec.describe Food::Dieta do
 
