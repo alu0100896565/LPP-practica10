@@ -496,4 +496,8 @@ it "Metodo select" do
   expect(@dietaE.select { |i| i.emisiones < 1}).to eq([@lentejas])
 end
 
+it "Metodo max" do
+  expect(@dietaE.max).to eq(@lentejas)
+end
+
 end
