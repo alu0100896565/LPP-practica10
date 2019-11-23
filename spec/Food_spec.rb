@@ -500,4 +500,8 @@ it "Metodo max" do
   expect(@dietaE.max).to eq(@lentejas)
 end
 
+it "Metodo min" do
+  expect(@dietaE.min).to eq(@pollo)
+end
+
 end
