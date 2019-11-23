@@ -272,6 +272,12 @@ end
 
 end
 
+context "Añadiendo Enumerable a la clase List" do
+  it "Comprobar que se añade el mixin Enumerable en la clase List" do
+    expect(Food::List.ancestors.select {|o| o.class == Module }).to eq([Enumerable, Kernel])
+  end
+end
+
 end
 
 RSpec.describe Food::Dieta_lista do
