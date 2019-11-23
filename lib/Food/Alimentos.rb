@@ -1,6 +1,7 @@
 module Food
     class Alimentos
 
+      include Comparable
         attr_reader :nombre, :emisiones, :terreno, :prot, :carbs, :lip
         def initialize(datos)
     
