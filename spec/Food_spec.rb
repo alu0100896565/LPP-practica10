@@ -512,7 +512,7 @@ end
 
 RSpec.describe Food::Platos do
   before (:all) do
-    @plato = Food::Platos.new
+    @plato = Food::Platos.new("Ejemplo")
 end
 
 context "Probando la clase Platos: atributos" do
