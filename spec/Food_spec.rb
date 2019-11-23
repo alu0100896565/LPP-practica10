@@ -492,4 +492,8 @@ it "Metodo collect" do
   expect(@dietaE.collect { "cat"}).to eq(["cat", "cat"])
 end
 
+it "Metodo select" do
+  expect(@dietaE.select { |i| i.emisiones < 1}).to eq([@lentejas])
+end
+
 end
