@@ -18,7 +18,7 @@ module Food
           if not anOther.is_a? Alimentos
             return nil
           end
-          self.valorEnergetico <=> anOther.valorEnergetico
+          [self.valorEnergetico, self.valorAmbiental] <=> [anOther.valorEnergetico, anOther.valorAmbiental]  
         end
     
         def to_s
@@ -28,6 +28,10 @@ module Food
     
         def valorEnergetico
           ((@prot*4.0)+(@carbs*4.0)+(@lip*9.0)).round(3)
+        end
+
+        def valorAmbiental
+          (@emisiones + @terreno)
         end
     
         def +(other)
