@@ -509,3 +509,18 @@ it "Metodo sort" do
 end
 
 end
+
+RSpec.describe Food::Platos do
+  before (:all) do
+    @plato = Food::Platos.new
+end
+
+context "Probando la clase Platos: atributos" do
+
+it "Los platos deben tener nombre" do
+  expect(@plato.respond_to?:nombre).to eq(true)
+end
+
+end
+
+end
