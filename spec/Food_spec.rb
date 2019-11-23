@@ -61,7 +61,7 @@ RSpec.describe Food::Alimentos do
         end
 
       it "Se ha sobrecargado el operador <=>" do
-        expect(@lentejas<=>@leche).to eq(true)
+        expect(@lentejas<=>@leche).to eq(1)
       end
       end
     end

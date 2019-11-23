@@ -13,6 +13,13 @@ module Food
           @lip = datos[:lip]
     
         end
+
+        def <=>(anOther)
+          if not anOther.is_a? Alimentos
+            return nil
+          end
+          self.valorEnergetico <=> anOther.valorEnergetico
+        end
     
         def to_s
     
