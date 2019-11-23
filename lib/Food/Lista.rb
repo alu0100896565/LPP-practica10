@@ -4,6 +4,7 @@ module Food
     end
   
     class List
+      include Enumerable
       attr_reader :head, :tail
       def initialize()
         @head = nil
