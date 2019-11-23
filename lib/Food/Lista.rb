@@ -11,8 +11,8 @@ module Food
         @tail = nil
       end
 
-      def each()
-        
+      def each(&block)
+        block.call(@head)
       end
   
       def empty
@@ -23,8 +23,8 @@ module Food
         end
       end
       
-      def insert_head(nodo)
-        raise TypeError, "Se espera como argumento un nodo: Node" unless nodo.is_a?Node
+      def insert_head(val)
+          nodo = Node.new(val,nil,nil)
         if self.empty
           @head = nodo
           @tail = nodo
@@ -35,8 +35,8 @@ module Food
         end
       end
       
-      def insert_tail(nodo)
-        raise TypeError, "Se espera como argumento un nodo: Node" unless nodo.is_a?Node
+      def insert_tail(val)
+        nodo = Node.new(val,nil,nil)
         if self.empty
           @head = nodo
           @tail = nodo
@@ -47,16 +47,16 @@ module Food
         end
       end
   
-      def insert_various_head(arrayNodos)
-        raise TypeError, "Se espera como argumento un array" unless arrayNodos.is_a?Array
-        for i in arrayNodos do
+      def insert_various_head(array)
+        raise TypeError, "Se espera como argumento un array" unless array.is_a?Array
+        for i in array do
           self.insert_head(i)
         end
       end
       
-      def insert_various_tail(arrayNodos)
-        raise TypeError, "Se espera como argumento un array" unless arrayNodos.is_a?Array
-        for i in arrayNodos do
+      def insert_various_tail(array)
+        raise TypeError, "Se espera como argumento un array" unless array.is_a?Array
+        for i in array do
           self.insert_tail(i)
         end
       end
@@ -75,7 +75,7 @@ module Food
         end
         nodo.prev = nil
         nodo.next = nil
-        return nodo
+        return nodo.value
       end
   
       def extract_tail()
@@ -92,7 +92,7 @@ module Food
         end
         nodo.prev = nil
         nodo.next = nil
-        return nodo
+        return nodo.value
       end
   
       def recorrerLista

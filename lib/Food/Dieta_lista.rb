@@ -12,14 +12,14 @@ module Food
     
     def insert_headS(alimento)
         raise TypeError, "Se espera como argumento un alimento" unless alimento.is_a?Alimentos
-        nodo = Node.new(alimento, nil, nil)
-        insert_head(nodo)
+        
+        insert_head(alimento)
     end
 
     def insert_tailS(alimento)
         raise TypeError, "Se espera como argumento un alimento" unless alimento.is_a?Alimentos
-        nodo = Node.new(alimento, nil, nil)
-        insert_tail(nodo)
+        
+        insert_tail(alimento)
     end
 
     def suma_total

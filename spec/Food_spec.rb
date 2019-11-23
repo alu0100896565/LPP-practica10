@@ -182,10 +182,8 @@ RSpec.describe Food::List do
   before(:all) do
     @nodo = Food::Node.new(0,nil,nil)
     @lista = Food::List.new()
-    @nodo1 = Food::Node.new(1,nil,nil)
-    @nodo2 = Food::Node.new(2,nil,nil)
-    @nodo3 = Food::Node.new(3,nil,nil)
-    @nodoArray = [@nodo1, @nodo2, @nodo3]
+    
+    @array = [1, 2, 3]
   end
 
 context "Probando la estructura Node " do
@@ -226,9 +224,9 @@ end
   it "Los metodos de insertar funcionan correctamente" do
 
   
-    @lista.insert_head(@nodo1)
+    @lista.insert_head(1)
     expect(@lista.head.value).to eq(1)
-    @lista.insert_tail(@nodo2)
+    @lista.insert_tail(2)
     expect(@lista.tail.value).to eq(2)
   
   end
@@ -243,10 +241,10 @@ end
 
   
     @lista1 = Food::List.new()
-    @lista1.insert_various_head(@nodoArray)
+    @lista1.insert_various_head(@array)
     expect(@lista1.head.value).to eq(3)
     expect(@lista1.tail.value).to eq(1)
-    @lista1.insert_various_tail(@nodoArray)
+    @lista1.insert_various_tail(@array)
     expect(@lista1.head.value).to eq(3)
     expect(@lista1.tail.value).to eq(3)
   
@@ -254,19 +252,19 @@ end
 
   it "Se pueden extraer exlementos de la cabeza de la lista" do
     expect(@lista.respond_to?:extract_head).to eq(true)
-    expect(@lista.extract_head.value).to eq(1)
-    expect(@lista.extract_head.value).to eq(2)
+    expect(@lista.extract_head).to eq(1)
+    expect(@lista.extract_head).to eq(2)
   end
 
   it "Se pueden extraer exlementos de la cola de la lista" do
     expect(@lista.respond_to?:extract_tail).to eq(true)
     @lista2 = Food::List.new()
     expect(@lista2.empty).to eq(true)
-    @lista2.insert_head(@nodo1)
-    @lista2.insert_tail(@nodo2)
+    @lista2.insert_head(1)
+    @lista2.insert_tail(2)
     expect(@lista2.recorrerLista).to eq(" 1 2")
-    expect(@lista2.extract_tail.value).to eq(2)
-    expect(@lista2.extract_tail.value).to eq(1)
+    expect(@lista2.extract_tail).to eq(2)
+    expect(@lista2.extract_tail).to eq(1)
     
   end
 
@@ -279,6 +277,16 @@ context "Añadiendo Enumerable a la clase List" do
 
   it "Añadiendo el metodo each en List" do
     expect(@lista.respond_to?:each).to eq(true)
+  end
+
+  it "El metodo each esta implementado correctamente" do
+    x = 0
+    @lista2 = Food::List.new()
+    expect(@lista2.empty).to eq(true)
+    @lista2.insert_head(@nodo1)
+    @lista2.insert_tail(@nodo2)
+    @lista2.each { |i| x+=i}
+    expect(x).to eq(3)
   end
 end
 
@@ -323,8 +331,8 @@ it "La clase Dieta_lista debe poder insertar alimentos por cabeza y cola" do
 end
 
 it "Comprobar que los metodos introducidos concuerdan" do
-  expect(@dietaL.extract_head.value.to_s).to eq(@lentejas.to_s)
-  expect(@dietaL.extract_tail.value.to_s).to eq(@pollo.to_s)
+  expect(@dietaL.extract_head.to_s).to eq(@lentejas.to_s)
+  expect(@dietaL.extract_tail.to_s).to eq(@pollo.to_s)
 end
 
 it "Crear el metodo suma_total para sumar todos los alimentos de la lista" do
