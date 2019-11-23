@@ -11,7 +11,9 @@ module Food
         @tail = nil
       end
 
-      
+      def each()
+        
+      end
   
       def empty
         if @head == nil && @tail == nil
