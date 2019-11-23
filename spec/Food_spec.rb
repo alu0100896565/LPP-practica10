@@ -504,4 +504,8 @@ it "Metodo min" do
   expect(@dietaE.min).to eq(@pollo)
 end
 
+it "Metodo sort" do
+  expect(@dietaE.sort).to eq([@pollo, @lentejas])
+end
+
 end
