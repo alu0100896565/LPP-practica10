@@ -285,7 +285,7 @@ context "Añadiendo Enumerable a la clase List" do
     expect(@lista2.empty).to eq(true)
     @lista2.insert_head(@nodo1)
     @lista2.insert_tail(@nodo2)
-    @lista2.each { |i| x+=i}
+    @lista2.each { |i| x+=i.value}
     expect(x).to eq(3)
   end
 end
