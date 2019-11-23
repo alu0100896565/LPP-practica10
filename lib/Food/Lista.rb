@@ -12,6 +12,7 @@ module Food
       end
 
       def each(&block)
+        return nil if @head == nil
         nodo = @head
         while true
         block.call(nodo.value)

@@ -311,6 +311,8 @@ RSpec.describe Food::Dieta_lista do
     @cafe = Food::Alimentos.new({ :nombre => "Cafe", :prot => 0.1, :carbs => 0.0, :lip => 0.0, :emisiones => 0.4, :terreno => 0.3})
     @tofu = Food::Alimentos.new({ :nombre => "Tofu", :prot => 8.0, :carbs => 1.9, :lip => 4.8, :emisiones => 2.0, :terreno => 2.2})
     @nuez = Food::Alimentos.new({ :nombre => "Nuez", :prot => 20.0, :carbs => 21.0, :lip => 54.0, :emisiones => 0.3, :terreno => 7.9})
+
+    @dietaE = Food::Dieta_lista.new("Dieta Enumerable", "mujer")
   end
 
 context "Probando la clase Dieta_lista: atributos" do
@@ -481,6 +483,13 @@ context "Probando las diferentes dietas" do
     expect(@dietaCar.emisionesAnuales).to eq(62634.0)
   end
 
+end
+
+context "Probando los metodos de Enumerable en la clase Dieta_lista"
+it "Metodo collect" do
+  @dietaE.insert_headS(@lentejas)
+  @dietaE.insert_headS(@pollo)
+  expect(@dietaE.collect { "cat"}).to eq(["cat", "cat"])
 end
 
 end
