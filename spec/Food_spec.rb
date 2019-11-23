@@ -283,9 +283,9 @@ context "Añadiendo Enumerable a la clase List" do
     x = 0
     @lista2 = Food::List.new()
     expect(@lista2.empty).to eq(true)
-    @lista2.insert_head(@nodo1)
-    @lista2.insert_tail(@nodo2)
-    @lista2.each { |i| x+=i.value}
+    @lista2.insert_head(1)
+    @lista2.insert_tail(2)
+    @lista2.each { |i| x+=i}
     expect(x).to eq(3)
   end
 end

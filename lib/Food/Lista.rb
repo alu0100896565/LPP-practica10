@@ -12,7 +12,15 @@ module Food
       end
 
       def each(&block)
-        block.call(@head)
+        nodo = @head
+        while true
+        block.call(nodo.value)
+        if nodo.next == nil
+          break
+        end
+        nodo = nodo.next
+        
+        end
       end
   
       def empty
