@@ -38,5 +38,11 @@ module Food
           suma = { :nombre => "Mezcla", :emisiones => (self.emisiones+other.emisiones).round(3), :terreno => (self.terreno+other.terreno).round(3), :prot => (self.prot+other.prot).round(3), :carbs => (self.carbs+other.carbs).round(3), :lip => (self.lip+other.lip).round(3)}
           Alimentos.new(suma)
         end
+
+        def *(gram)
+          raise TypeError, "Se espera como argumento un entero" unless gram.is_a?Integer
+          mult = { :nombre => self.nombre, :emisiones => (self.emisiones*(gram/100)).round(3), :terreno => (self.terreno*(gram/100)).round(3), :prot => (self.prot*(gram/100)).round(3), :carbs => (self.carbs*(gram/100)).round(3), :lip => (self.lip*(gram/100)).round(3)}
+          Alimentos.new(mult)
+        end
       end
 end

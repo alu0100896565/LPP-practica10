@@ -73,6 +73,11 @@ describe Food::Alimentos do
         expect(@carneCordero<=@lentejas).to eq(true)
         expect(@tofu.between?(@cafe, @lentejas)).to eq(true)
       end
+      
+      it "Probando el operador *" do
+        expect((@lentejas*200).prot).to eq(47)
+      end
+
       end
     end
     
