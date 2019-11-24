@@ -1,10 +1,4 @@
 RSpec.describe Food do
-  it "has a version number" do
-    expect(Food::VERSION).not_to be nil
-  end
-end
-
-RSpec.describe Food::Alimentos do
   before (:all) do        
     @lentejas = Food::Alimentos.new({ :nombre => "lentejas", :prot => 23.5, :carbs => 52.0, :lip => 1.4, :emisiones => 0.4, :terreno => 3.4})
     @carneVaca = Food::Alimentos.new({ :nombre => "Carne de vaca", :prot => 21.1, :carbs => 0.0, :lip => 3.1, :emisiones => 50.0, :terreno => 164.0})
@@ -24,6 +18,13 @@ RSpec.describe Food::Alimentos do
     
 
   end
+  it "has a version number" do
+    expect(Food::VERSION).not_to be nil
+  end
+
+
+describe Food::Alimentos do
+  
 
   context "Probando la clase Alimentos: atributos" do
     it "Se ha de poder instanciar un alimento" do
@@ -78,24 +79,9 @@ RSpec.describe Food::Alimentos do
 
 
 
-RSpec.describe Food::Dieta do
+describe Food::Dieta do
 
     before(:all) do
-      @lentejas = Food::Alimentos.new({ :nombre => "lentejas", :prot => 23.5, :carbs => 52.0, :lip => 1.4, :emisiones => 0.4, :terreno => 3.4})
-    @carneVaca = Food::Alimentos.new({ :nombre => "Carne de vaca", :prot => 21.1, :carbs => 0.0, :lip => 3.1, :emisiones => 50.0, :terreno => 164.0})
-    @carneCordero = Food::Alimentos.new({ :nombre => "Carne de cordero", :prot => 18.0, :carbs => 0.0, :lip => 17.0, :emisiones => 20.0, :terreno => 185.0})
-    @camarones = Food::Alimentos.new({ :nombre => "Camarones", :prot => 17.6, :carbs => 1.5, :lip => 0.6, :emisiones => 18.0, :terreno => 2.0})
-    @chocolate = Food::Alimentos.new({ :nombre => "Chocolate", :prot => 5.3, :carbs => 47.0, :lip => 30.0, :emisiones => 2.3, :terreno => 3.4})
-    @salmon = Food::Alimentos.new({ :nombre => "Salmon", :prot => 19.9, :carbs => 0.0, :lip => 13.6, :emisiones => 6.0, :terreno => 3.7})
-    @cerdo = Food::Alimentos.new({ :nombre => "Cerdo", :prot => 21.5, :carbs => 0.0, :lip => 6.3, :emisiones => 7.6, :terreno => 11.0})
-    @pollo = Food::Alimentos.new({ :nombre => "Pollo", :prot => 20.6, :carbs => 0.0, :lip => 5.6, :emisiones => 5.7, :terreno => 7.1})
-    @queso = Food::Alimentos.new({ :nombre => "Queso", :prot => 25.0, :carbs => 1.3, :lip => 33.0, :emisiones => 11.0, :terreno => 41.0})
-    @cerveza = Food::Alimentos.new({ :nombre => "Cerveza", :prot => 0.5, :carbs => 3.6, :lip => 0.0, :emisiones => 0.24, :terreno => 0.22})
-    @leche = Food::Alimentos.new({ :nombre => "Leche de vaca", :prot => 3.3, :carbs => 4.8, :lip => 3.2, :emisiones => 3.2, :terreno => 8.9})
-    @huevos = Food::Alimentos.new({ :nombre => "Huevos", :prot => 13.0, :carbs => 1.1, :lip => 11.0, :emisiones => 4.2, :terreno => 5.7})
-    @cafe = Food::Alimentos.new({ :nombre => "Cafe", :prot => 0.1, :carbs => 0.0, :lip => 0.0, :emisiones => 0.4, :terreno => 0.3})
-    @tofu = Food::Alimentos.new({ :nombre => "Tofu", :prot => 8.0, :carbs => 1.9, :lip => 4.8, :emisiones => 2.0, :terreno => 2.2})
-    @nuez = Food::Alimentos.new({ :nombre => "Nuez", :prot => 20.0, :carbs => 21.0, :lip => 54.0, :emisiones => 0.3, :terreno => 7.9})
     @comidita = [@lentejas, @pollo, @nuez, @tofu, @queso, @huevos, @salmon, @chocolate, @cafe, @cerveza, @carneVaca, @carneCordero, @salmon, @leche]
     @dietita = Food::Dieta.new("Dietita", "hombre", @comidita)
     end
@@ -178,7 +164,7 @@ end
 end
 end
 
-RSpec.describe Food::List do
+describe Food::List do
   before(:all) do
     @nodo = Food::Node.new(0,nil,nil)
     @lista = Food::List.new()
@@ -292,7 +278,7 @@ end
 
 end
 
-RSpec.describe Food::Dieta_lista do
+describe Food::Dieta_lista do
   before(:all) do
     
     @dietaL = Food::Dieta_lista.new("Dieta de prueba", "hombre")
@@ -510,7 +496,7 @@ end
 
 end
 
-RSpec.describe Food::Platos do
+describe Food::Platos do
   before (:all) do
     @plato = Food::Platos.new("Ejemplo")
 end
@@ -532,6 +518,15 @@ end
 it "Se pueden añidir alimentos a los platos" do
   expect(@plato.respond_to?:insert_alimH).to eq(true)
   expect(@plato.respond_to?:insert_alimT).to eq(true)
+
+end
+
+it "Las funciones de insercion funcionan correctamente" do
+  @plato.insert_alimH(@lentejas, 100)
+  expect(@plato.ali_list.head.value).to eq(@lentejas)
+  @plato.insert_alimT(@pollo, 100)
+  expect(@plato.ali_list.tail.value).to eq(@pollo)
+end
 
 end
 
