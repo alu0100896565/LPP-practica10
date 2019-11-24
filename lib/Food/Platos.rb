@@ -40,7 +40,9 @@ def carbs
     (((@alim_total.carbs * 4) / @alim_total.valorEnergetico) * 100.00).round(3)
 end
 
-
+def vct
+    @alim_total.valorEnergetico
+end
 end
 
 end
