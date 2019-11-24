@@ -32,6 +32,8 @@ def prots
     (((@alim_total.prot * 4) / @alim_total.valorEnergetico) * 100.00).round(3)
 end
 
+
+
 end
 
 end

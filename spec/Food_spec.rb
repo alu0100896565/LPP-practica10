@@ -544,6 +544,11 @@ it "Se obtiene el porcentaje de proteinas del conjunto de alimentos" do
   expect(@plato.prots).to eq(39.428)
 end
 
+it "Se obtienen los porcentajes de lipidos y hidratos del plato" do
+  expect(@plato.lips).to eq(14.081)
+  expect(@plato.carbs).to eq(46.491)
+end
+
 end
 
 end
