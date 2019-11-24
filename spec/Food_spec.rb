@@ -540,6 +540,10 @@ it "Se obtiene la suma total de los nutrientes y efectos ambientales de los alim
 
 end
 
+it "Se obtiene el porcentaje de proteinas del conjunto de alimentos" do
+  expect(@plato.prots).to eq(39.428)
+end
+
 end
 
 end

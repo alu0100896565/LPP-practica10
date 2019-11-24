@@ -28,6 +28,8 @@ def insert_alimT(alim, gram)
     @alim_total += alim
 end
 
+
+
 end
 
 end
