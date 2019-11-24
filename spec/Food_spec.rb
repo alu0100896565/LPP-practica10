@@ -549,6 +549,10 @@ it "Se obtienen los porcentajes de lipidos y hidratos del plato" do
   expect(@plato.carbs).to eq(46.491)
 end
 
+it "Se obtiene el Valor Calorico Total del conjunto de alimentos" do
+  expect(@plato.vct).to eq(447.4)
+end
+
 end
 
 end
