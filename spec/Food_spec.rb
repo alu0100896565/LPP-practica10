@@ -529,6 +529,12 @@ it "Los platos tienen una lista de cantidades de alimento en gramos" do
   expect(@plato.respond_to?:gram_list).to eq(true)
 end
 
+it "Se pueden añidir alimentos a los platos" do
+  expect(@plato.respond_to?:insert_alimH).to eq(true)
+  expect(@plato.respond_to?:insert_alimT).to eq(true)
+
+end
+
 end
 
 end
