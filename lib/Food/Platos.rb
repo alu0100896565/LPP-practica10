@@ -43,6 +43,8 @@ end
 def vct
     @alim_total.valorEnergetico
 end
+
+
 end
 
 end

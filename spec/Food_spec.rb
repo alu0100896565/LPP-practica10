@@ -553,6 +553,10 @@ it "Se obtiene el Valor Calorico Total del conjunto de alimentos" do
   expect(@plato.vct).to eq(447.4)
 end
 
+it "Se obtiene el plato formateado" do
+  expect(@plato.to_s).to eq("Ejemplo, prot: 44.1, carbs: 52.0, lip: 7.0, emisiones: 6.1, terreno: 10.5, VCT: 447.4.")
+end 
+
 end
 
 end
