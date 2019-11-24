@@ -521,6 +521,10 @@ it "Los platos deben tener nombre" do
   expect(@plato.respond_to?:nombre).to eq(true)
 end
 
+it "Los platos tienen una lista de aimentos" do
+  expect(@plato.respond_to?:ali_list).to eq(true)
+end
+
 end
 
 end

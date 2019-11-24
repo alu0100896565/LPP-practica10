@@ -31,7 +31,7 @@ module Food
         end
 
         def valorAmbiental
-          (@emisiones + @terreno)
+          (1/(@emisiones + @terreno)).round(3)
         end
     
         def +(other)
