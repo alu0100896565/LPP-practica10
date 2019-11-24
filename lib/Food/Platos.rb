@@ -12,17 +12,20 @@ end
 def insert_alimH(alim, gram)
     raise TypeError, "Se espera como argumento un alimento" unless alim.is_a?Alimentos
     raise TypeError, "Se espera como argumento un entero" unless gram.is_a?Integer
-
     @ali_list.insert_head(alim)
     @gram_list.insert_head(gram)
+    alim=alim*(gram)
+    @alim_total += alim
+
 end
 
 def insert_alimT(alim, gram)
     raise TypeError, "Se espera como argumento un alimento" unless alim.is_a?Alimentos
-    raise TypeError, "Se espera como argumento un entero" unless gram.is_a?Integer
-
+    raise TypeError, "Se espera como argumento un entero" unless gram.is_a?Integer 
     @ali_list.insert_tail(alim)
     @gram_list.insert_tail(gram)
+    alim=alim*(gram)
+    @alim_total += alim
 end
 
 end

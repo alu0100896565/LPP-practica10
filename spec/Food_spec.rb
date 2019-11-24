@@ -55,6 +55,11 @@ describe Food::Alimentos do
     it "Debe ser posible sumar comidas para sumar sus valores de nutrientes e impacto ambiental" do
       expect((@lentejas+@lentejas).valorEnergetico).to eq(629.2)
     end
+
+    it "Probando el operador *" do
+      expect((@lentejas*200).prot).to eq(47)
+    end
+
   end
     context "Añadiendo Comparable a la clase Alimentos" do
       it "El mixin Comparable esta incluido en la clase Alimentos" do
@@ -72,10 +77,6 @@ describe Food::Alimentos do
         expect(@lentejas>=@carneVaca).to eq(true)
         expect(@carneCordero<=@lentejas).to eq(true)
         expect(@tofu.between?(@cafe, @lentejas)).to eq(true)
-      end
-      
-      it "Probando el operador *" do
-        expect((@lentejas*200).prot).to eq(47)
       end
 
       end
@@ -534,8 +535,8 @@ it "Las funciones de insercion funcionan correctamente" do
 end
 
 it "Se obtiene la suma total de los nutrientes y efectos ambientales de los alimentos del plato" do
-  expect(@plato.alim_total.prot).to eq(40)
-  expect(@plato.alim_total.terreno).to eq(10)
+  expect(@plato.alim_total.prot).to eq(44.1)
+  expect(@plato.alim_total.terreno).to eq(10.5)
 
 end
 
