@@ -44,7 +44,9 @@ def vct
     @alim_total.valorEnergetico
 end
 
-
+def to_s
+    "#{@nombre}, prot: #{@alim_total.prot}, carbs: #{@alim_total.carbs}, lip: #{@alim_total.lip}, emisiones: #{@alim_total.emisiones}, terreno: #{@alim_total.terreno}, VCT: #{@alim_total.valorEnergetico}."
+end
 end
 
 end
