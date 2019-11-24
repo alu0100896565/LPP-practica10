@@ -525,6 +525,10 @@ it "Los platos tienen una lista de aimentos" do
   expect(@plato.respond_to?:ali_list).to eq(true)
 end
 
+it "Los platos tienen una lista de cantidades de alimento en gramos" do
+  expect(@plato.respond_to?:gram_list).to eq(true)
+end
+
 end
 
 end
