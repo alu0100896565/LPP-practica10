@@ -528,6 +528,12 @@ it "Las funciones de insercion funcionan correctamente" do
   expect(@plato.ali_list.tail.value).to eq(@pollo)
 end
 
+it "Se obtiene la suma total de los nutrientes y efectos ambientales de los alimentos del plato" do
+  expect(@plato.alim_total.prot).to eq(40)
+  expect(@plato.alim_total.terreno).to eq(10)
+
+end
+
 end
 
 end
