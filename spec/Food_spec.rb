@@ -520,6 +520,8 @@ end
 it "Los platos tienen una lista de cantidades de alimento en gramos" do
   expect(@plato.respond_to?:gram_list).to eq(true)
 end
+end
+context "Probando la clase Platos: metodos" do
 
 it "Se pueden añidir alimentos a los platos" do
   expect(@plato.respond_to?:insert_alimH).to eq(true)
@@ -559,6 +561,19 @@ end
 
 end
 
+end
+
+describe Food::Platos_Ambiental do
+  before(:all) do
+
+  end
+
+  context "Probando la clase Platos_Ambiental" do
+    
+    it "La clase Platos_Ambiental es hija de la clase Platos" do
+      expect(Food::Platos_Ambiental.superclass).to eq(Food::Platos)
+    end
+  end
 end
 
 end
