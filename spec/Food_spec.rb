@@ -565,14 +565,19 @@ end
 
 describe Food::Platos_Ambiental do
   before(:all) do
-
+    platoA = Food::Platos_Ambiental.new("Ejemplo")
   end
 
-  context "Probando la clase Platos_Ambiental" do
-    
+  context "Probando la clase Platos_Ambiental" do 
+
     it "La clase Platos_Ambiental es hija de la clase Platos" do
       expect(Food::Platos_Ambiental.superclass).to eq(Food::Platos)
     end
+
+    it "platoA es una instancia de Platos_Ambiental" do 
+      expect(platoA.instance_of?Food::Platos_Ambiental).to eq(true)
+    end
+
   end
 end
 
