@@ -578,6 +578,10 @@ describe Food::Platos_Ambiental do
       expect(@platoA.instance_of?Food::Platos_Ambiental).to eq(true)
     end
 
+    it "platoA a su vez es un plato" do
+      expect(@platoA.is_a?Food::Platos).to eq(true)
+    end
+
   end
 end
 
