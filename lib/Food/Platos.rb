@@ -45,7 +45,11 @@ def vct
 end
 
 def to_s
-    "#{@nombre}, prot: #{@alim_total.prot}, carbs: #{@alim_total.carbs}, lip: #{@alim_total.lip}, emisiones: #{@alim_total.emisiones}, terreno: #{@alim_total.terreno}, VCT: #{@alim_total.valorEnergetico}."
+    x="#{@nombre}, prot: #{@alim_total.prot}, carbs: #{@alim_total.carbs}, lip: #{@alim_total.lip}, emisiones: #{@alim_total.emisiones}, terreno: #{@alim_total.terreno}, VCT: #{@alim_total.valorEnergetico}."
+    y=" Compuesto por: "
+    lista2 = ali_list.zip(gram_list)
+    lista2.cycle(1){ |z| y+=z[0].nombre + ", " + z[1].to_s + " gramos, "}
+    x + y
 end
 end
 
