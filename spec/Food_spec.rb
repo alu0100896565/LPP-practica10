@@ -556,7 +556,7 @@ it "Se obtiene el Valor Calorico Total del conjunto de alimentos" do
 end
 
 it "Se obtiene el plato formateado" do
-  expect(@plato.to_s).to eq("Ejemplo, prot: 44.1, carbs: 52.0, lip: 7.0, emisiones: 6.1, terreno: 10.5, VCT: 447.4. Compuesto por: lentejas, 100 gramos, Pollo, 100 gramos, ")
+  expect(@plato.to_s).to eq("Ejemplo, prot: 44.1, carbs: 52.0, lip: 7.0, emisiones: 6.1, terreno: 10.5, VCT: 447.4. Compuesto por: lentejas, 100 gramos, Pollo, 100 gramos")
 end 
 
 end
@@ -580,6 +580,10 @@ describe Food::Platos_Ambiental do
 
     it "platoA a su vez es un plato" do
       expect(@platoA.is_a?Food::Platos).to eq(true)
+    end
+
+    it "Valor total de la emisiones diarias de de gases de efecto invernadero" do
+      expect(@platoA.emisiones).to eq(0)
     end
 
   end

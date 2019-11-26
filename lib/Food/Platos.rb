@@ -49,6 +49,7 @@ def to_s
     y=" Compuesto por: "
     lista2 = ali_list.zip(gram_list)
     lista2.cycle(1){ |z| y+=z[0].nombre + ", " + z[1].to_s + " gramos, "}
+    y = y[0..(y.length-3)]
     x + y
 end
 end
