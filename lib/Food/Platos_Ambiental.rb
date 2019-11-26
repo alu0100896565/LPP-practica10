@@ -10,5 +10,9 @@ module Food
         (Platos.instance_method(:alim_total).bind(self).call).emisiones
     end
 
+    def terreno
+        (Platos.instance_method(:alim_total).bind(self).call).terreno
+    end
+
     end
 end
