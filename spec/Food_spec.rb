@@ -586,8 +586,12 @@ describe Food::Platos_Ambiental do
       expect(@platoA.emisiones).to eq(0)
     end
 
-    it "Estimaci´on de los metros cuadrados de uso de terreno." do
+    it "Estimaci´on de los metros cuadrados de uso de terreno" do
       expect(@platoA.terreno).to eq(0)
+    end
+
+    it "Se obtiene la eficiencia energetica formateada" do
+      expect(@platoA.efiEn).to eq("Para crear el plato: Ejemplo, se generan 0.0 de emisiones de CO2 y 0.0 de metros cuadrados de terreno")
     end
 
   end
