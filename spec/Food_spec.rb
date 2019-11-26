@@ -586,6 +586,10 @@ describe Food::Platos_Ambiental do
       expect(@platoA.emisiones).to eq(0)
     end
 
+    it "Estimaci´on de los metros cuadrados de uso de terreno." do
+      expect(@platoA.terreno).to eq(0)
+    end
+
   end
 end
 
