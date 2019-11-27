@@ -775,7 +775,13 @@ describe Food::Platos_Ambiental do
       expect(@platoVegN<=@platoCarN).to eq(false)
     end
 
-    
+    it "Finalizando comparaciones de platos" do
+      expect(@platoVegaN<@platoCarN).to eq(false)
+      expect(@platoVegaN>@platoCarN).to eq(true)
+      expect(@platoVegaN==@platoCarN).to eq(false)
+      expect(@platoVegaN>=@platoCarN).to eq(true)
+      expect(@platoVegaN<=@platoCarN).to eq(false)
+    end
 
   end
 
