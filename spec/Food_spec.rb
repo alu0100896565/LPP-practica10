@@ -968,7 +968,13 @@ describe Food::Platos_Ambiental do
       expect(@listaCar.min).to eq(@platoCarN3)
     end
     
-    
+    it "Metodo sort" do
+      expect(@listaEsp.sort).to eq([@platoEspN2, @platoEspN, @platoEspN3])
+      expect(@listaVas.sort).to eq([@platoVasN, @platoVasN2, @platoVasN3])
+      expect(@listaVeg.sort).to eq([@platoVegN2, @platoVegN, @platoVegN3])
+      expect(@listaVega.sort).to eq([@platoVegaN2, @platoVegaN, @platoVegaN3])
+      expect(@listaCar.sort).to eq([@platoCarN3, @platoCarN, @platoCarN2])
+    end
 
   end
 
