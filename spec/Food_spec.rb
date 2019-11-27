@@ -936,6 +936,16 @@ describe Food::Platos_Ambiental do
       
     end
 
+    it "Metodo collect" do
+      expect(@listaEsp.collect { "cat"}).to eq(["cat", "cat", "cat"])
+      expect(@listaVas.collect { "cat"}).to eq(["cat", "cat", "cat"])
+      expect(@listaVeg.collect { "cat"}).to eq(["cat", "cat", "cat"])
+      expect(@listaVega.collect { "cat"}).to eq(["cat", "cat", "cat"])
+      expect(@listaCar.collect { "cat"}).to eq(["cat", "cat", "cat"])
+    end
+    
+    
+
   end
 
 end
