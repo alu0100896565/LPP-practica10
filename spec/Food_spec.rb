@@ -588,15 +588,29 @@ describe Food::Platos_Ambiental do
     @platoA3 = Food::Platos_Ambiental.new("Ejemplo3")
     @platoEsp = Food::Platos_Ambiental.new("Cocido Extraño")
     @platoEspN = Food::Platos.new("Cocido Extraño")
+    @platoEspN2 = Food::Platos.new("Plato esp2")
+    @platoEspN3 = Food::Platos.new("Plato esp3")
     @platoVas = Food::Platos_Ambiental.new("Mucha cerveza")
     @platoVasN = Food::Platos.new("Mucha cerveza")
+    @platoVasN2 = Food::Platos.new("plato Vas2")
+    @platoVasN3 = Food::Platos.new("plato Vas3")
     @platoVeg = Food::Platos_Ambiental.new("Vegetariana")
     @platoVegN = Food::Platos.new("Vegetariana")
+    @platoVegN2 = Food::Platos.new("plato Veg2")
+    @platoVegN3 = Food::Platos.new("plato Veg3")
     @platoVega = Food::Platos_Ambiental.new("Vegetaliana")
     @platoVegaN = Food::Platos.new("Vegetaliana")
+    @platoVegaN2 = Food::Platos.new("plato Vega2")
+    @platoVegaN3 = Food::Platos.new("plato Vega3")
     @platoCar = Food::Platos_Ambiental.new("Locura por la carne")
     @platoCarN = Food::Platos.new("Locura por la carne")
-
+    @platoCarN2 = Food::Platos.new("Locura por la carne2")
+    @platoCarN3 = Food::Platos.new("Locura por la carne3")
+    @listaEsp = Food::List.new
+    @listaVas = Food::List.new
+    @listaVeg = Food::List.new
+    @listaVega = Food::List.new
+    @listaCar = Food::List.new
   end
 
   context "Probando la clase Platos_Ambiental" do 
@@ -849,6 +863,77 @@ describe Food::Platos_Ambiental do
       expect(@platoVega==@platoCar).to eq(false)
       expect(@platoVega>=@platoCar).to eq(false)
       expect(@platoVega<=@platoCar).to eq(true)
+    end
+
+  end
+
+  context "Enumerando listas de platos de la misma dieta" do
+
+    it "Creando las listas de platos" do
+      @platoEspN2.insert_alimH(@lentejas, 180)
+      @platoEspN2.insert_alimH(@chocolate, 80)
+      @platoEspN2.insert_alimH(@cerdo, 80)
+      @platoEspN2.insert_alimH(@nuez, 30)
+      @platoEspN3.insert_alimH(@lentejas, 220)
+      @platoEspN3.insert_alimH(@chocolate, 90)
+      @platoEspN3.insert_alimH(@cerdo, 90)
+      @platoEspN3.insert_alimH(@nuez, 70)
+      @platoVasN2.insert_alimH(@lentejas, 220)
+      @platoVasN2.insert_alimH(@chocolate, 110)
+      @platoVasN2.insert_alimH(@cerveza, 230)
+      @platoVasN3.insert_alimH(@lentejas, 300)
+      @platoVasN3.insert_alimH(@chocolate, 150)
+      @platoVasN3.insert_alimH(@cerveza, 400)
+      @platoVegN2.insert_alimH(@huevos, 40)
+      @platoVegN2.insert_alimH(@leche, 40)
+      @platoVegN2.insert_alimH(@chocolate, 80)
+      @platoVegN2.insert_alimH(@nuez, 50)
+      @platoVegN2.insert_alimH(@lentejas, 130)
+      @platoVegN3.insert_alimH(@huevos, 20)
+      @platoVegN3.insert_alimH(@leche, 20)
+      @platoVegN3.insert_alimH(@chocolate, 60)
+      @platoVegN3.insert_alimH(@nuez, 90)
+      @platoVegN3.insert_alimH(@lentejas, 200)
+      @platoVegaN2.insert_alimH(@chocolate, 70)
+      @platoVegaN2.insert_alimH(@nuez, 60)
+      @platoVegaN2.insert_alimH(@lentejas, 160)
+      @platoVegaN3.insert_alimH(@chocolate, 90)
+      @platoVegaN3.insert_alimH(@nuez, 90)
+      @platoVegaN3.insert_alimH(@lentejas, 240)
+      @platoCarN2.insert_alimH(@cerdo, 130)
+      @platoCarN2.insert_alimH(@carneVaca, 120)
+      @platoCarN2.insert_alimH(@chocolate, 110)
+      @platoCarN2.insert_alimH(@lentejas, 120)
+      @platoCarN3.insert_alimH(@cerdo, 100)
+      @platoCarN3.insert_alimH(@carneVaca, 100)
+      @platoCarN3.insert_alimH(@chocolate, 110)
+      @platoCarN3.insert_alimH(@lentejas, 80)
+
+      @listaEsp.insert_head(@platoEspN)
+      @listaEsp.insert_head(@platoEspN2)
+      @listaEsp.insert_head(@platoEspN3)
+      expect(@listaEsp.head.value).to eq(@platoEspN3)
+
+      @listaVas.insert_head(@platoVasN)
+      @listaVas.insert_head(@platoVasN2)
+      @listaVas.insert_head(@platoVasN3)
+      expect(@listaVas.head.value).to eq(@platoVasN3)
+
+      @listaVeg.insert_head(@platoVegN)
+      @listaVeg.insert_head(@platoVegN2)
+      @listaVeg.insert_head(@platoVegN3)
+      expect(@listaVeg.head.value).to eq(@platoVegN3)
+
+      @listaVega.insert_head(@platoVegaN)
+      @listaVega.insert_head(@platoVegaN2)
+      @listaVega.insert_head(@platoVegaN3)
+      expect(@listaVega.head.value).to eq(@platoVegaN3)
+
+      @listaCar.insert_head(@platoCarN)
+      @listaCar.insert_head(@platoCarN2)
+      @listaCar.insert_head(@platoCarN3)
+      expect(@listaCar.head.value).to eq(@platoCarN3)
+      
     end
 
   end
