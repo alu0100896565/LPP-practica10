@@ -960,6 +960,14 @@ describe Food::Platos_Ambiental do
       expect(@listaCar.max).to eq(@platoCarN2)
     end
     
+    it "Metodo min" do
+      expect(@listaEsp.min).to eq(@platoEspN2)
+      expect(@listaVas.min).to eq(@platoVasN)
+      expect(@listaVeg.min).to eq(@platoVegN2)
+      expect(@listaVega.min).to eq(@platoVegaN2)
+      expect(@listaCar.min).to eq(@platoCarN3)
+    end
+    
     
 
   end
