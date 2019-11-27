@@ -679,6 +679,17 @@ describe Food::Platos_Ambiental do
       expect(@platoVega.protsPorcent).to eq(17.517)
     end
 
+    it "Creando plato de dieta Carnivora" do
+      @platoCar = Food::Platos_Ambiental.new("Locura por la carne")
+      @platoCar.insert_alimH(@cerdo, 110)
+      @platoCar.insert_alimH(@carneVaca, 110)
+      @platoCar.insert_alimH(@chocolate, 100)
+      @platoCar.insert_alimH(@lentejas, 90)
+      expect(@platoCar.carbsPorcent).to eq(35.979)
+      expect(@platoCar.lipsPorcent).to eq(35.902)
+      expect(@platoCar.protsPorcent).to eq(28.119)
+    end
+
   end
 
 end
