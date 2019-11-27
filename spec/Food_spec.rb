@@ -761,6 +761,22 @@ describe Food::Platos_Ambiental do
       expect(@platoEspN>=@platoCarN).to eq(true)
       expect(@platoEspN<=@platoCarN).to eq(false)
     end
+
+    it "Comparando el plato de dieta Vegetariana" do
+      expect(@platoVegN<@platoVegaN).to eq(true)
+      expect(@platoVegN>@platoVegaN).to eq(false)
+      expect(@platoVegN==@platoVegaN).to eq(false)
+      expect(@platoVegN>=@platoVegaN).to eq(false)
+      expect(@platoVegN<=@platoVegaN).to eq(true)
+      expect(@platoVegN<@platoCarN).to eq(false)
+      expect(@platoVegN>@platoCarN).to eq(true)
+      expect(@platoVegN==@platoCarN).to eq(false)
+      expect(@platoVegN>=@platoCarN).to eq(true)
+      expect(@platoVegN<=@platoCarN).to eq(false)
+    end
+
+    
+
   end
 
 end
