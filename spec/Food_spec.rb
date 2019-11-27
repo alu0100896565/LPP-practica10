@@ -743,6 +743,24 @@ describe Food::Platos_Ambiental do
       expect(@platoEspN>=@platoCarN).to eq(true)
       expect(@platoEspN<=@platoCarN).to eq(false)
     end
+
+    it "Compatando el plato de dieta Vasca" do
+      expect(@platoVasN<@platoVegN).to eq(true)
+      expect(@platoVasN>@platoVegN).to eq(false)
+      expect(@platoVasN==@platoVegN).to eq(false)
+      expect(@platoVasN>=@platoVegN).to eq(false)
+      expect(@platoVasN<=@platoVegN).to eq(true)
+      expect(@platoEspN<@platoVegaN).to eq(false)
+      expect(@platoEspN>@platoVegaN).to eq(true)
+      expect(@platoEspN==@platoVegaN).to eq(false)
+      expect(@platoEspN>=@platoVegaN).to eq(true)
+      expect(@platoEspN<=@platoVegaN).to eq(false)
+      expect(@platoEspN<@platoCarN).to eq(false)
+      expect(@platoEspN>@platoCarN).to eq(true)
+      expect(@platoEspN==@platoCarN).to eq(false)
+      expect(@platoEspN>=@platoCarN).to eq(true)
+      expect(@platoEspN<=@platoCarN).to eq(false)
+    end
   end
 
 end
