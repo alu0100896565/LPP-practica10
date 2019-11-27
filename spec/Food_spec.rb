@@ -620,6 +620,17 @@ describe Food::Platos_Ambiental do
       expect(@platoA<@platoA2).to eq(true)
     end
 
+    it "Pruebas comparando Platos_Ambientales" do
+      @platoA3.insert_alimH(@cafe, 100)
+      expect(@platoA<@platoA2).to eq(true)
+      expect(@platoA3<@platoA2).to eq(true)
+      expect(@platoA==@platoA).to eq(true)
+      expect(@platoA>=@platoA3).to eq(true)
+      expect(@platoA3<=@platoA2).to eq(true)
+      expect(@platoA.between?(@platoA3, @platoA2)).to eq(true)
+    
+  end
+
   end
 end
 
