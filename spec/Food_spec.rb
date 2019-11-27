@@ -640,11 +640,19 @@ end
 describe Food::Dieta_Plato do
   before(:all) do
     @dPlato = Food::Dieta_Plato.new("Dieta ejemplo")
+    @platoA = Food::Platos_Ambiental.new("Ejemplo")
   end
   context "Probando la clase Dieta_Plato" do
     it "Funciona el initialize" do
     expect(@dPlato.instance_of? Food::Dieta_Plato).to eq(true)
   end
+
+    it "Se puede insertar platos en la Dieta_Plato" do
+      expect(@dPlato.respond_to?:insert_platH).to eq(true)
+      @platoA.insert_alimH(@lentejas, 100)
+      @dPlato.insert_platH(@platoA)
+      expect(@dPlato.getHead).to eq(@platoA)
+    end
 end
 end
 
