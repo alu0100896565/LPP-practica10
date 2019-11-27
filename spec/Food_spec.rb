@@ -952,6 +952,14 @@ describe Food::Platos_Ambiental do
       expect(@listaCar.select { |i| i.vct < 1500}).to eq([@platoCarN3, @platoCarN2, @platoCarN])
     end
     
+    it "Metodo max" do
+      expect(@listaEsp.max).to eq(@platoEspN3)
+      expect(@listaVas.max).to eq(@platoVasN3)
+      expect(@listaVeg.max).to eq(@platoVegN3)
+      expect(@listaVega.max).to eq(@platoVegaN3)
+      expect(@listaCar.max).to eq(@platoCarN2)
+    end
+    
     
 
   end
