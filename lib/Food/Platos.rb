@@ -1,7 +1,7 @@
 module Food
 
 class Platos
-attr_reader :nombre, :ali_list, :gram_list, :alim_total
+attr_reader :nombre, :ali_list, :gram_list
 def initialize(nombre)
     @nombre = nombre
     @ali_list = List.new
@@ -28,15 +28,15 @@ def insert_alimT(alim, gram)
     @alim_total += alim
 end
 
-def prots
+def protsPorcent
     (((@alim_total.prot * 4) / @alim_total.valorEnergetico) * 100.00).round(3)
 end
 
-def lips
+def lipsPorcent
     (((@alim_total.lip * 9) / @alim_total.valorEnergetico) * 100.00).round(3)
 end
 
-def carbs
+def carbsPorcent
     (((@alim_total.carbs * 4) / @alim_total.valorEnergetico) * 100.00).round(3)
 end
 
@@ -52,6 +52,23 @@ def to_s
     y = y[0..(y.length-3)]
     x + y
 end
+
+def proteins
+    @alim_total.prot
+end
+
+def lipids
+    alim_total.lip
+end
+
+def carbohidrats
+    alim_total.carbs
+end
+
+private def alim_total
+    @alim_total
+end
+
 end
 
 end

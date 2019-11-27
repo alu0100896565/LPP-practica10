@@ -505,6 +505,7 @@ end
 describe Food::Platos do
   before (:all) do
     @plato = Food::Platos.new("Ejemplo")
+    @plato2 = Food::Platos.new("Ejemplo2")
 end
 
 context "Probando la clase Platos: atributos" do
@@ -536,19 +537,17 @@ it "Las funciones de insercion funcionan correctamente" do
   expect(@plato.ali_list.tail.value).to eq(@pollo)
 end
 
-it "Se obtiene la suma total de los nutrientes y efectos ambientales de los alimentos del plato" do
-  expect(@plato.alim_total.prot).to eq(44.1)
-  expect(@plato.alim_total.terreno).to eq(10.5)
-
+it "Se obtiene la suma total de los nutrientes" do
+  expect(@plato.proteins).to eq(44.1)
 end
 
 it "Se obtiene el porcentaje de proteinas del conjunto de alimentos" do
-  expect(@plato.prots).to eq(39.428)
+  expect(@plato.protsPorcent).to eq(39.428)
 end
 
 it "Se obtienen los porcentajes de lipidos y hidratos del plato" do
-  expect(@plato.lips).to eq(14.081)
-  expect(@plato.carbs).to eq(46.491)
+  expect(@plato.lipsPorcent).to eq(14.081)
+  expect(@plato.carbsPorcent).to eq(46.491)
 end
 
 it "Se obtiene el Valor Calorico Total del conjunto de alimentos" do
@@ -558,6 +557,10 @@ end
 it "Se obtiene el plato formateado" do
   expect(@plato.to_s).to eq("Ejemplo, prot: 44.1, carbs: 52.0, lip: 7.0, emisiones: 6.1, terreno: 10.5, VCT: 447.4. Compuesto por: lentejas, 100 gramos, Pollo, 100 gramos")
 end 
+
+it "Los platos son comparables" do 
+  expect(@plato>@plato2).to eq(true)
+end
 
 end
 
@@ -581,7 +584,8 @@ describe Food::Platos_Ambiental do
     it "platoA a su vez es un plato" do
       expect(@platoA.is_a?Food::Platos).to eq(true)
     end
-
+  end
+    context "Probando la clase Platos_Ambiental: metodos" do 
     it "Valor total de la emisiones diarias de de gases de efecto invernadero" do
       expect(@platoA.emisiones).to eq(0)
     end

@@ -17,7 +17,7 @@ module Food
     def efiEn
         x = "Para crear el plato: #{@nombre}, se generan "
         x += (Platos.instance_method(:alim_total).bind(self).call).emisiones.to_s
-        x+= " de emisiones de CO2 y "
+        x += " de emisiones de CO2 y "
         x += (Platos.instance_method(:alim_total).bind(self).call).terreno.to_s
         x += " de metros cuadrados de terreno"
     end
