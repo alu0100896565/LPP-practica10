@@ -75,7 +75,7 @@ def carbohidrats
     alim_total.carbs
 end
 
-private def alim_total
+protected def alim_total
     @alim_total
 end
 

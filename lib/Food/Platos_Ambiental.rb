@@ -6,12 +6,23 @@ module Food
         super(nombre)
     end
 
+    def <=>(anOther)
+        if not anOther.is_a? Platos
+            return nil
+              end
+              self.efEner <=> anOther.efEner
+    end
+
     def emisiones
         (Platos.instance_method(:alim_total).bind(self).call).emisiones
     end
 
     def terreno
         (Platos.instance_method(:alim_total).bind(self).call).terreno
+    end
+
+    def efEner
+        self.alim_total.emisiones+self.alim_total.terreno
     end
 
     def efiEn
