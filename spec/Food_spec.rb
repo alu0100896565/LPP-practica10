@@ -77,6 +77,7 @@ describe Food::Alimentos do
         expect(@lentejas>=@carneVaca).to eq(true)
         expect(@carneCordero<=@lentejas).to eq(true)
         expect(@tofu.between?(@cafe, @lentejas)).to eq(true)
+        expect(@cafe.clamp(@tofu, @lentejas)).to eq(@tofu)
       end
 
       end
@@ -572,7 +573,8 @@ it "Pruebas comparando Platos" do
     expect(@plato>=@plato3).to eq(true)
     expect(@plato3<=@plato2).to eq(true)
     expect(@plato2.between?(@plato3, @plato)).to eq(true)
-  
+    expect(@plato3.clamp(@plato2, @plato)).to eq(@plato2)
+
 end
 
 end
@@ -628,6 +630,8 @@ describe Food::Platos_Ambiental do
       expect(@platoA>=@platoA3).to eq(true)
       expect(@platoA3<=@platoA2).to eq(true)
       expect(@platoA.between?(@platoA3, @platoA2)).to eq(true)
+      expect(@platoA2.clamp(@platoA3, @platoA)).to eq(@platoA)
+
   end
 
   end
