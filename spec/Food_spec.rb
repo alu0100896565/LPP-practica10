@@ -506,6 +506,7 @@ describe Food::Platos do
   before (:all) do
     @plato = Food::Platos.new("Ejemplo")
     @plato2 = Food::Platos.new("Ejemplo2")
+    @plato3 = Food::Platos.new("Ejemplo3")
 end
 
 context "Probando la clase Platos: atributos" do
@@ -561,6 +562,17 @@ end
 it "Los platos son comparables" do 
   @plato2.insert_alimH(@lentejas, 100)
   expect(@plato>@plato2).to eq(true)
+end
+
+it "Pruebas comparando Platos" do
+    @plato3.insert_alimH(@cafe, 100)
+    expect(@plato>@plato2).to eq(true)
+    expect(@plato3<@plato2).to eq(true)
+    expect(@plato==@plato).to eq(true)
+    expect(@plato>=@plato3).to eq(true)
+    expect(@plato3<=@plato2).to eq(true)
+    expect(@plato2.between?(@plato3, @plato)).to eq(true)
+  
 end
 
 end
