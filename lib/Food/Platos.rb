@@ -1,12 +1,22 @@
 module Food
 
 class Platos
+    
+    include Comparable
+
 attr_reader :nombre, :ali_list, :gram_list
 def initialize(nombre)
     @nombre = nombre
     @ali_list = List.new
     @gram_list = List.new
     @alim_total = Alimentos.new({ :nombre => nombre, :prot => 0.0, :carbs => 0.0, :lip => 0.0, :emisiones => 0.0, :terreno => 0.0})
+end
+
+def <=>(anOther)
+    if not anOther.is_a? Platos
+        return nil
+          end
+          self.vct <=> anOther.vct
 end
 
 def insert_alimH(alim, gram)

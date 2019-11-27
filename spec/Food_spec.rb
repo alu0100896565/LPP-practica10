@@ -559,6 +559,7 @@ it "Se obtiene el plato formateado" do
 end 
 
 it "Los platos son comparables" do 
+  @plato2.insert_alimH(@lentejas, 100)
   expect(@plato>@plato2).to eq(true)
 end
 
