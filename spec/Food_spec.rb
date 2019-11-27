@@ -628,10 +628,20 @@ describe Food::Platos_Ambiental do
       expect(@platoA>=@platoA3).to eq(true)
       expect(@platoA3<=@platoA2).to eq(true)
       expect(@platoA.between?(@platoA3, @platoA2)).to eq(true)
-    
   end
 
   end
+end
+
+describe Food::Dieta_Plato do
+  before(:all) do
+    @dPlato = Food::Dieta_Plato.new("Dieta ejemplo")
+  end
+  context "Probando la clase Dieta_Plato" do
+    it "Funciona el initialize" do
+    expect(@dPlato.instance_of? Food::Dieta_Plato).to eq(true)
+  end
+end
 end
 
 end
