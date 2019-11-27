@@ -582,6 +582,9 @@ end
 describe Food::Platos_Ambiental do
   before(:all) do
     @platoA = Food::Platos_Ambiental.new("Ejemplo")
+    @platoA2 = Food::Platos_Ambiental.new("Ejemplo2")
+    @platoA3 = Food::Platos_Ambiental.new("Ejemplo3")
+
   end
 
   context "Probando la clase Platos_Ambiental" do 
@@ -609,6 +612,12 @@ describe Food::Platos_Ambiental do
 
     it "Se obtiene la eficiencia energetica formateada" do
       expect(@platoA.efiEn).to eq("Para crear el plato: Ejemplo, se generan 0.0 de emisiones de CO2 y 0.0 de metros cuadrados de terreno")
+    end
+
+    it "Los Platos_Ambiental deben ser comparables" do
+      @platoA.insert_alimH(@lentejas, 100)
+      @platoA2.insert_alimH(@cerdo, 100)
+      expect(@platoA<@platoA2).to eq(true)
     end
 
   end
