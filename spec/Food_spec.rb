@@ -635,25 +635,20 @@ describe Food::Platos_Ambiental do
   end
 
   end
-end
+  context "Comparando platos de dietas" do
+    it "Creando plato de dieta Española" do
+      @platoEsp = Food::Platos_Ambiental.new("Cocido Extraño")
+      @platoEsp.insert_alimH(@lentejas, 200)
+      @platoEsp.insert_alimH(@chocolate, 90)
+      @platoEsp.insert_alimH(@cerdo, 60)
+      @platoEsp.insert_alimH(@nuez, 50)
+      expect(@platoEsp.protsPorcent).to eq(20.303)
+      expect(@platoEsp.lipsPorcent).to eq(37.062)
+      expect(@platoEsp.carbsPorcent).to eq(42.635)
 
-describe Food::Dieta_Plato do
-  before(:all) do
-    @dPlato = Food::Dieta_Plato.new("Dieta ejemplo")
-    @platoA = Food::Platos_Ambiental.new("Ejemplo")
-  end
-  context "Probando la clase Dieta_Plato" do
-    it "Funciona el initialize" do
-    expect(@dPlato.instance_of? Food::Dieta_Plato).to eq(true)
-  end
-
-    it "Se puede insertar platos en la Dieta_Plato" do
-      expect(@dPlato.respond_to?:insert_platH).to eq(true)
-      @platoA.insert_alimH(@lentejas, 100)
-      @dPlato.insert_platH(@platoA)
-      expect(@dPlato.getHead).to eq(@platoA)
     end
-end
+  end
+
 end
 
 end
