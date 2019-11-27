@@ -642,11 +642,20 @@ describe Food::Platos_Ambiental do
       @platoEsp.insert_alimH(@chocolate, 90)
       @platoEsp.insert_alimH(@cerdo, 60)
       @platoEsp.insert_alimH(@nuez, 50)
-      expect(@platoEsp.protsPorcent).to eq(20.303)
-      expect(@platoEsp.lipsPorcent).to eq(37.062)
       expect(@platoEsp.carbsPorcent).to eq(42.635)
-
+      expect(@platoEsp.lipsPorcent).to eq(37.062)
+      expect(@platoEsp.protsPorcent).to eq(20.303)
     end
+
+    it "Creando plato de dieta Vasca" do
+      @platoVas = Food::Platos_Ambiental.new("Cocido Extraño")
+      @platoVas.insert_alimH(@lentejas, 200)
+      @platoVas.insert_alimH(@chocolate, 100)
+      @platoVas.insert_alimH(@cerveza, 300)
+      expect(@platoVas.carbsPorcent).to eq(55.909)
+      expect(@platoVas.lipsPorcent).to eq(25.501)
+      expect(@platoVas.protsPorcent).to eq(18.590)
+  end
   end
 
 end
