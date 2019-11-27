@@ -586,6 +586,16 @@ describe Food::Platos_Ambiental do
     @platoA = Food::Platos_Ambiental.new("Ejemplo")
     @platoA2 = Food::Platos_Ambiental.new("Ejemplo2")
     @platoA3 = Food::Platos_Ambiental.new("Ejemplo3")
+    @platoEsp = Food::Platos_Ambiental.new("Cocido Extraño")
+    @platoEspN = Food::Platos.new("Cocido Extraño")
+    @platoVas = Food::Platos_Ambiental.new("Mucha cerveza")
+    @platoVasN = Food::Platos.new("Mucha cerveza")
+    @platoVeg = Food::Platos_Ambiental.new("Vegetariana")
+    @platoVegN = Food::Platos.new("Vegetariana")
+    @platoVega = Food::Platos_Ambiental.new("Vegetaliana")
+    @platoVegaN = Food::Platos.new("Vegetaliana")
+    @platoCar = Food::Platos_Ambiental.new("Locura por la carne")
+    @platoCarN = Food::Platos.new("Locura por la carne")
 
   end
 
@@ -637,7 +647,7 @@ describe Food::Platos_Ambiental do
   end
   context "Comparando platos de dietas" do
     it "Creando plato de dieta Española" do
-      @platoEsp = Food::Platos_Ambiental.new("Cocido Extraño")
+      
       @platoEsp.insert_alimH(@lentejas, 200)
       @platoEsp.insert_alimH(@chocolate, 90)
       @platoEsp.insert_alimH(@cerdo, 60)
@@ -645,20 +655,27 @@ describe Food::Platos_Ambiental do
       expect(@platoEsp.carbsPorcent).to eq(42.635)
       expect(@platoEsp.lipsPorcent).to eq(37.062)
       expect(@platoEsp.protsPorcent).to eq(20.303)
+      @platoEspN.insert_alimH(@lentejas, 200)
+      @platoEspN.insert_alimH(@chocolate, 90)
+      @platoEspN.insert_alimH(@cerdo, 60)
+      @platoEspN.insert_alimH(@nuez, 50)
     end
 
     it "Creando plato de dieta Vasca" do
-      @platoVas = Food::Platos_Ambiental.new("Mucha cerveza")
+      
       @platoVas.insert_alimH(@lentejas, 200)
       @platoVas.insert_alimH(@chocolate, 100)
       @platoVas.insert_alimH(@cerveza, 300)
       expect(@platoVas.carbsPorcent).to eq(55.909)
       expect(@platoVas.lipsPorcent).to eq(25.501)
       expect(@platoVas.protsPorcent).to eq(18.590)
+      @platoVasN.insert_alimH(@lentejas, 200)
+      @platoVasN.insert_alimH(@chocolate, 100)
+      @platoVasN.insert_alimH(@cerveza, 300)
   end
 
     it "Creando plato de dieta Vegetaria" do
-      @platoVeg = Food::Platos_Ambiental.new("Vegetariana")
+      
       @platoVeg.insert_alimH(@huevos, 30)
       @platoVeg.insert_alimH(@leche, 30)
       @platoVeg.insert_alimH(@chocolate, 70)
@@ -667,20 +684,28 @@ describe Food::Platos_Ambiental do
       expect(@platoVeg.carbsPorcent).to eq(39.639)
       expect(@platoVeg.lipsPorcent).to eq(42.364)
       expect(@platoVeg.protsPorcent).to eq(17.997)
+      @platoVegN.insert_alimH(@huevos, 30)
+      @platoVegN.insert_alimH(@leche, 30)
+      @platoVegN.insert_alimH(@chocolate, 70)
+      @platoVegN.insert_alimH(@nuez, 70)
+      @platoVegN.insert_alimH(@lentejas, 170)
     end
 
     it "Creando plato de dieta Vegetaria" do
-      @platoVega = Food::Platos_Ambiental.new("Vegetaliana")
+      
       @platoVega.insert_alimH(@chocolate, 80)
       @platoVega.insert_alimH(@nuez, 70)
       @platoVega.insert_alimH(@lentejas, 190)
       expect(@platoVega.carbsPorcent).to eq(42.086)
       expect(@platoVega.lipsPorcent).to eq(40.397)
       expect(@platoVega.protsPorcent).to eq(17.517)
+      @platoVegaN.insert_alimH(@chocolate, 80)
+      @platoVegaN.insert_alimH(@nuez, 70)
+      @platoVegaN.insert_alimH(@lentejas, 190)
     end
 
     it "Creando plato de dieta Carnivora" do
-      @platoCar = Food::Platos_Ambiental.new("Locura por la carne")
+      
       @platoCar.insert_alimH(@cerdo, 110)
       @platoCar.insert_alimH(@carneVaca, 110)
       @platoCar.insert_alimH(@chocolate, 100)
@@ -688,8 +713,36 @@ describe Food::Platos_Ambiental do
       expect(@platoCar.carbsPorcent).to eq(35.979)
       expect(@platoCar.lipsPorcent).to eq(35.902)
       expect(@platoCar.protsPorcent).to eq(28.119)
+      @platoCarN.insert_alimH(@cerdo, 110)
+      @platoCarN.insert_alimH(@carneVaca, 110)
+      @platoCarN.insert_alimH(@chocolate, 100)
+      @platoCarN.insert_alimH(@lentejas, 90)
     end
 
+    it "Comparando el plato de dieta Española" do
+      expect(@platoEspN<@platoVasN).to eq(false)
+      expect(@platoEspN>@platoVasN).to eq(true)
+      expect(@platoEspN==@platoVasN).to eq(false)
+      expect(@platoEspN>=@platoVasN).to eq(true)
+      expect(@platoEspN<=@platoVasN).to eq(false)
+      expect(@platoEspN.between?(@platoVegN, @platoVasN)).to eq(false)
+      expect(@platoEspN.clamp(@platoVasN, @platoVegN)).to eq(@platoVegN)
+      expect(@platoEspN<@platoVegN).to eq(false)
+      expect(@platoEspN>@platoVegN).to eq(true)
+      expect(@platoEspN==@platoVegN).to eq(false)
+      expect(@platoEspN>=@platoVegN).to eq(true)
+      expect(@platoEspN<=@platoVegN).to eq(false)
+      expect(@platoEspN<@platoVegaN).to eq(false)
+      expect(@platoEspN>@platoVegaN).to eq(true)
+      expect(@platoEspN==@platoVegaN).to eq(false)
+      expect(@platoEspN>=@platoVegaN).to eq(true)
+      expect(@platoEspN<=@platoVegaN).to eq(false)
+      expect(@platoEspN<@platoCarN).to eq(false)
+      expect(@platoEspN>@platoCarN).to eq(true)
+      expect(@platoEspN==@platoCarN).to eq(false)
+      expect(@platoEspN>=@platoCarN).to eq(true)
+      expect(@platoEspN<=@platoCarN).to eq(false)
+    end
   end
 
 end
