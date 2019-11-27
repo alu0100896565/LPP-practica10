@@ -944,6 +944,14 @@ describe Food::Platos_Ambiental do
       expect(@listaCar.collect { "cat"}).to eq(["cat", "cat", "cat"])
     end
     
+    it "Metodo select" do
+      expect(@listaEsp.select { |i| i.vct < 1500}).to eq([@platoEspN2, @platoEspN])
+      expect(@listaVas.select { |i| i.vct < 1500}).to eq([@platoVasN2, @platoVasN])
+      expect(@listaVeg.select { |i| i.vct < 1500}).to eq([@platoVegN2, @platoVegN])
+      expect(@listaVega.select { |i| i.vct < 1500}).to eq([@platoVegaN2, @platoVegaN])
+      expect(@listaCar.select { |i| i.vct < 1500}).to eq([@platoCarN3, @platoCarN2, @platoCarN])
+    end
+    
     
 
   end
