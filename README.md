@@ -1,12 +1,12 @@
 # Food
 
-Practica 7. Lenguajes y Paradigmas de Programación.
+Practica 8. Lenguajes y Paradigmas de Programación.
 Eduardo Suárez Ojeda
 Alu0100896565
 
 ## Usage
 
-Práctica donde implementaremos la clase de listaas doblemente enlazadas y la estructura nodo de las mismas. Con ellas representaremos varios tipos de dieta diferente, cada una con un porcentaje de nutrientes determinado y estimar el impacto ambiental de cada una.
+Práctica donde implementaremos los módulos comparable y enumerable en las clases alimentos y lista respectivamente y crearemos una nueva clase llamada plato y otra que deriva de la misma que se encargan de representar conjuntos de alimentos.
 
 ## License
 

@@ -16,6 +16,7 @@ module Food
         nodo = @head
         while true
         block.call(nodo.value)
+        #yield nodo.value
         if nodo.next == nil
           break
         end
