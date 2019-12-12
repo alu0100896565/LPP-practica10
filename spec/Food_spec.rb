@@ -993,7 +993,13 @@ describe Food::Platos_Ambiental do
       expect(@platoEsp.respond_to?:impacto_carbono).to eq(true)
     end
 
-    
+    it "La funcion indice de impacto de huella de carbono funciona correctamente" do
+      @platoAC = Food::Platos_Ambiental.new("Ejemplo")
+      @platoAC.insert_alimH(@chocolate, 50)
+      vecPlatosN = [@platoA, @platoA3,@platoAC, @platoVega, @platoA2]
+      get_ic = ->(plato) { plato.impacto_carbono}
+      expect(vecPlatosN.map(&get_ic)).to eq([1, 1, 2, 3, 3])
+    end
   end
 
 end
