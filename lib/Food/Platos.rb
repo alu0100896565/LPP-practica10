@@ -88,6 +88,8 @@ def impacto_energetico
     end
 end
 
+
+
 end
 
 end

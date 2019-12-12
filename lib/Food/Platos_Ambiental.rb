@@ -33,6 +33,10 @@ module Food
         x += " de metros cuadrados de terreno"
     end
 
+    def impacto_carbono
+        
+    end
+
     end
 end
 

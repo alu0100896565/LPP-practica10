@@ -993,6 +993,7 @@ describe Food::Platos_Ambiental do
       expect(@platoEsp.respond_to?:impacto_carbono).to eq(true)
     end
 
+    
   end
 
 end
