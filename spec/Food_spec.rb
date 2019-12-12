@@ -984,10 +984,9 @@ describe Food::Platos_Ambiental do
     end
 
     it "La funcion indice de impacto energetico funciona correctamente" do
-      
-      expect(@plato2.impacto_energetico).to eq(1)
-      expect(@plato3.impacto_energetico).to eq(1)
-      expect(@platoEsp.impacto_energetico).to eq(3)
+      # impacto_ambiental = Food::Platos.instance_method(:impacto_energetico)
+      vecPlatos = [@plato2, @plato3, @platoEsp, @platoVeg]
+      expect(vecPlatos.map { |x| x.impacto_energetico}).to eq([1, 1, 3, 3])
     end
 
   end

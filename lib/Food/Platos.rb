@@ -80,7 +80,12 @@ protected def alim_total
 end
 
 def impacto_energetico
-    
+    if vct < 670 then
+        return 1
+    elsif vct < 830 then
+        return 2
+    else 3 
+    end
 end
 
 end
