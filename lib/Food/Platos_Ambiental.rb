@@ -34,7 +34,12 @@ module Food
     end
 
     def impacto_carbono
-        
+        if emisiones < 0.8 then
+            return 1
+        elsif emisiones < 1.2 then
+            return 2
+        else 3 
+        end
     end
 
     end
