@@ -989,6 +989,10 @@ describe Food::Platos_Ambiental do
       expect(vecPlatos.map { |x| x.impacto_energetico}).to eq([1, 1, 3, 3])
     end
 
+    it "La funcion indice de impacto de huella de carbono existe" do
+      expect(@platoEsp.respond_to?:impacto_carbono).to eq(true)
+    end
+
   end
 
 end
