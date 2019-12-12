@@ -42,6 +42,10 @@ module Food
         end
     end
 
+    def huella_nutricional
+
+    end
+
     end
 end
 
