@@ -1000,6 +1000,11 @@ describe Food::Platos_Ambiental do
       get_ic = ->(plato) { plato.impacto_carbono}
       expect(vecPlatosN.map(&get_ic)).to eq([1, 1, 2, 3, 3])
     end
+
+    it "Existe la funcion huella_nutricional" do
+      expect(@platoEsp.respond_to?:huella_nutricional).to eq(true)
+    end
+
   end
 
 end
