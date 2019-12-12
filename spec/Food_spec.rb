@@ -15,7 +15,8 @@ RSpec.describe Food do
     @cafe = Food::Alimentos.new({ :nombre => "Cafe", :prot => 0.1, :carbs => 0.0, :lip => 0.0, :emisiones => 0.4, :terreno => 0.3})
     @tofu = Food::Alimentos.new({ :nombre => "Tofu", :prot => 8.0, :carbs => 1.9, :lip => 4.8, :emisiones => 2.0, :terreno => 2.2})
     @nuez = Food::Alimentos.new({ :nombre => "Nuez", :prot => 20.0, :carbs => 21.0, :lip => 54.0, :emisiones => 0.3, :terreno => 7.9})
-    
+    @plato2 = Food::Platos.new("Ejemplo2")
+    @plato3 = Food::Platos.new("Ejemplo3")
 
   end
   it "has a version number" do
@@ -506,8 +507,7 @@ end
 describe Food::Platos do
   before (:all) do
     @plato = Food::Platos.new("Ejemplo")
-    @plato2 = Food::Platos.new("Ejemplo2")
-    @plato3 = Food::Platos.new("Ejemplo3")
+    
 end
 
 context "Probando la clase Platos: atributos" do
@@ -982,6 +982,14 @@ describe Food::Platos_Ambiental do
     it "La funcion indice de impacto energetico existe" do
       expect(@platoEsp.respond_to?:impacto_energetico).to eq(true)
     end
+
+    it "La funcion indice de impacto energetico funciona correctamente" do
+      
+      expect(@plato2.impacto_energetico).to eq(1)
+      expect(@plato3.impacto_energetico).to eq(1)
+      expect(@platoEsp.impacto_energetico).to eq(3)
+    end
+
   end
 
 end
