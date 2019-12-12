@@ -79,7 +79,9 @@ protected def alim_total
     @alim_total
 end
 
-
+def impacto_energetico
+    
+end
 
 end
 
