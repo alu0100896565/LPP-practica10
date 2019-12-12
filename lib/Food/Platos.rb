@@ -79,6 +79,8 @@ protected def alim_total
     @alim_total
 end
 
+
+
 end
 
 end

@@ -978,6 +978,12 @@ describe Food::Platos_Ambiental do
 
   end
 
+  context "Practica 9:" do
+    it "La funcion indice de impacto energetico existe" do
+      expect(@platoEsp.respond_to?:impacto_energetico).to eq(true)
+    end
+  end
+
 end
 
 end
