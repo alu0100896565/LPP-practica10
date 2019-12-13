@@ -801,73 +801,73 @@ describe Food::Platos_Ambiental do
       expect(@platoVegaN<=@platoCarN).to eq(false)
     end
   end
-  context "Comparando informacion Ambiental de platos" do
+  # context "Comparando informacion Ambiental de platos" do
 
-    it "Comparando el plato de dieta Española" do
-      expect(@platoEsp<@platoVas).to eq(false)
-      expect(@platoEsp>@platoVas).to eq(true)
-      expect(@platoEsp==@platoVas).to eq(false)
-      expect(@platoEsp>=@platoVas).to eq(true)
-      expect(@platoEsp<=@platoVas).to eq(false)
-      expect(@platoEsp.between?(@platoVeg, @platoVas)).to eq(false)
-      expect(@platoEsp.clamp(@platoVas, @platoVeg)).to eq(@platoVeg)
-      expect(@platoEsp<@platoVeg).to eq(false)
-      expect(@platoEsp>@platoVeg).to eq(true)
-      expect(@platoEsp==@platoVeg).to eq(false)
-      expect(@platoEsp>=@platoVeg).to eq(true)
-      expect(@platoEsp<=@platoVeg).to eq(false)
-      expect(@platoEsp<@platoVega).to eq(false)
-      expect(@platoEsp>@platoVega).to eq(true)
-      expect(@platoEsp==@platoVega).to eq(false)
-      expect(@platoEsp>=@platoVega).to eq(true)
-      expect(@platoEsp<=@platoVega).to eq(false)
-      expect(@platoEsp<@platoCar).to eq(true)
-      expect(@platoEsp>@platoCar).to eq(false)
-      expect(@platoEsp==@platoCar).to eq(false)
-      expect(@platoEsp>=@platoCar).to eq(false)
-      expect(@platoEsp<=@platoCar).to eq(true)
-    end
+  #   it "Comparando el plato de dieta Española" do
+  #     expect(@platoEsp<@platoVas).to eq(false)
+  #     expect(@platoEsp>@platoVas).to eq(true)
+  #     expect(@platoEsp==@platoVas).to eq(false)
+  #     expect(@platoEsp>=@platoVas).to eq(true)
+  #     expect(@platoEsp<=@platoVas).to eq(false)
+  #     expect(@platoEsp.between?(@platoVeg, @platoVas)).to eq(false)
+  #     expect(@platoEsp.clamp(@platoVas, @platoVeg)).to eq(@platoVeg)
+  #     expect(@platoEsp<@platoVeg).to eq(false)
+  #     expect(@platoEsp>@platoVeg).to eq(true)
+  #     expect(@platoEsp==@platoVeg).to eq(false)
+  #     expect(@platoEsp>=@platoVeg).to eq(true)
+  #     expect(@platoEsp<=@platoVeg).to eq(false)
+  #     expect(@platoEsp<@platoVega).to eq(false)
+  #     expect(@platoEsp>@platoVega).to eq(true)
+  #     expect(@platoEsp==@platoVega).to eq(false)
+  #     expect(@platoEsp>=@platoVega).to eq(true)
+  #     expect(@platoEsp<=@platoVega).to eq(false)
+  #     expect(@platoEsp<@platoCar).to eq(true)
+  #     expect(@platoEsp>@platoCar).to eq(false)
+  #     expect(@platoEsp==@platoCar).to eq(false)
+  #     expect(@platoEsp>=@platoCar).to eq(false)
+  #     expect(@platoEsp<=@platoCar).to eq(true)
+  #   end
 
-    it "Compatando el plato de dieta Vasca" do
-      expect(@platoVas<@platoVeg).to eq(true)
-      expect(@platoVas>@platoVeg).to eq(false)
-      expect(@platoVas==@platoVeg).to eq(false)
-      expect(@platoVas>=@platoVeg).to eq(false)
-      expect(@platoVas<=@platoVeg).to eq(true)
-      expect(@platoVas<@platoVega).to eq(true)
-      expect(@platoVas>@platoVega).to eq(false)
-      expect(@platoVas==@platoVega).to eq(false)
-      expect(@platoVas>=@platoVega).to eq(false)
-      expect(@platoVas<=@platoVega).to eq(true)
-      expect(@platoVas<@platoCar).to eq(true)
-      expect(@platoVas>@platoCar).to eq(false)
-      expect(@platoVas==@platoCar).to eq(false)
-      expect(@platoVas>=@platoCar).to eq(false)
-      expect(@platoVas<=@platoCar).to eq(true)
-    end
+  #   it "Compatando el plato de dieta Vasca" do
+  #     expect(@platoVas<@platoVeg).to eq(true)
+  #     expect(@platoVas>@platoVeg).to eq(false)
+  #     expect(@platoVas==@platoVeg).to eq(false)
+  #     expect(@platoVas>=@platoVeg).to eq(false)
+  #     expect(@platoVas<=@platoVeg).to eq(true)
+  #     expect(@platoVas<@platoVega).to eq(true)
+  #     expect(@platoVas>@platoVega).to eq(false)
+  #     expect(@platoVas==@platoVega).to eq(false)
+  #     expect(@platoVas>=@platoVega).to eq(false)
+  #     expect(@platoVas<=@platoVega).to eq(true)
+  #     expect(@platoVas<@platoCar).to eq(true)
+  #     expect(@platoVas>@platoCar).to eq(false)
+  #     expect(@platoVas==@platoCar).to eq(false)
+  #     expect(@platoVas>=@platoCar).to eq(false)
+  #     expect(@platoVas<=@platoCar).to eq(true)
+  #   end
 
-    it "Comparando el plato de dieta Vegetariana" do
-      expect(@platoVeg<@platoVega).to eq(false)
-      expect(@platoVeg>@platoVega).to eq(true)
-      expect(@platoVeg==@platoVega).to eq(false)
-      expect(@platoVeg>=@platoVega).to eq(true)
-      expect(@platoVeg<=@platoVega).to eq(false)
-      expect(@platoVeg<@platoCar).to eq(true)
-      expect(@platoVeg>@platoCar).to eq(false)
-      expect(@platoVeg==@platoCar).to eq(false)
-      expect(@platoVeg>=@platoCar).to eq(false)
-      expect(@platoVeg<=@platoCar).to eq(true)
-    end
+  #   it "Comparando el plato de dieta Vegetariana" do
+  #     expect(@platoVeg<@platoVega).to eq(false)
+  #     expect(@platoVeg>@platoVega).to eq(true)
+  #     expect(@platoVeg==@platoVega).to eq(false)
+  #     expect(@platoVeg>=@platoVega).to eq(true)
+  #     expect(@platoVeg<=@platoVega).to eq(false)
+  #     expect(@platoVeg<@platoCar).to eq(true)
+  #     expect(@platoVeg>@platoCar).to eq(false)
+  #     expect(@platoVeg==@platoCar).to eq(false)
+  #     expect(@platoVeg>=@platoCar).to eq(false)
+  #     expect(@platoVeg<=@platoCar).to eq(true)
+  #   end
 
-    it "Finalizando comparaciones de platos" do
-      expect(@platoVega<@platoCar).to eq(true)
-      expect(@platoVega>@platoCar).to eq(false)
-      expect(@platoVega==@platoCar).to eq(false)
-      expect(@platoVega>=@platoCar).to eq(false)
-      expect(@platoVega<=@platoCar).to eq(true)
-    end
+  #   it "Finalizando comparaciones de platos" do
+  #     expect(@platoVega<@platoCar).to eq(true)
+  #     expect(@platoVega>@platoCar).to eq(false)
+  #     expect(@platoVega==@platoCar).to eq(false)
+  #     expect(@platoVega>=@platoCar).to eq(false)
+  #     expect(@platoVega<=@platoCar).to eq(true)
+  #   end
 
-  end
+  # end
 
   context "Enumerando listas de platos de la misma dieta" do
 
@@ -1013,7 +1013,9 @@ describe Food::Platos_Ambiental do
     end
 
     it "Se calcula el plato con la maxima huella nutricional del menu" do
+      @vecPlatosN = [@platoA, @platoA3,@platoAC, @platoVega, @platoA2]
       expect(@platoAC>@platoA).to eq(true)
+      expect(@vecPlatosN.max).to eq(@platoVega)
     end
 
   end

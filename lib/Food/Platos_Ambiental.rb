@@ -10,7 +10,7 @@ module Food
         if not anOther.is_a? Platos
             return nil
               end
-              self.efEner <=> anOther.efEner
+              self.huella_nutricional <=> anOther.huella_nutricional
     end
 
     def emisiones
