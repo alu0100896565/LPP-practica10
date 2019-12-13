@@ -997,9 +997,9 @@ describe Food::Platos_Ambiental do
 
     it "La funcion indice de impacto de huella de carbono funciona correctamente" do
       @platoAC.insert_alimH(@chocolate, 50)
-      @vecPlatosN = [@platoA, @platoA3,@platoAC, @platoVega, @platoA2]
+      vecPlatosN = [@platoA, @platoA3,@platoAC, @platoVega, @platoA2]
       get_ic = ->(plato) { plato.impacto_carbono }
-      expect(@vecPlatosN.map(&get_ic)).to eq([1, 1, 2, 3, 3])
+      expect(vecPlatosN.map(&get_ic)).to eq([1, 1, 2, 3, 3])
     end
 
     it "Existe la funcion huella_nutricional" do
@@ -1007,15 +1007,24 @@ describe Food::Platos_Ambiental do
     end
 
     it "La funcion huella nutricional funciona correctamente" do
-      @vecPlatosN = [@platoA, @platoA3,@platoAC, @platoVega, @platoA2]
+      vecPlatosN = [@platoA, @platoA3,@platoAC, @platoVega, @platoA2]
       get_hn = ->(plato) { plato.huella_nutricional }
-      expect(@vecPlatosN.map(&get_hn)).to eq([1.0, 1.0, 1.5, 3.0, 2.0])
+      expect(vecPlatosN.map(&get_hn)).to eq([1.0, 1.0, 1.5, 3.0, 2.0])
     end
 
     it "Se calcula el plato con la maxima huella nutricional del menu" do
-      @vecPlatosN = [@platoA, @platoA3,@platoAC, @platoVega, @platoA2]
+      vecPlatosN = [@platoA, @platoA3,@platoAC, @platoVega, @platoA2]
       expect(@platoAC>@platoA).to eq(true)
-      expect(@vecPlatosN.max).to eq(@platoVega)
+      expect(vecPlatosN.max).to eq(@platoVega)
+    end
+
+    it "Se a incrementa el precio de los platos en proporcion al plato con maxima huella nutricional" do
+      vecPlatosN = [@platoA, @platoA3,@platoAC, @platoVega, @platoA2]
+      vecPrecios = [6.95, 3.99, 5.0, 10.99, 7.95]
+      # porcentaje del 50%
+      porc = 0.5
+      subirPrecio = ->(plato) { ((plato.huella_nutricional / vecPlatosN.max.huella_nutricional) * porc).round(2) }
+      expect(vecPlatosN.map(&subirPrecio).zip(vecPrecios).map{ |x,y| ((x * y)+y).round(2)}).to eq([8.13, 4.67, 6.25, 16.49, 10.57])
     end
 
   end
