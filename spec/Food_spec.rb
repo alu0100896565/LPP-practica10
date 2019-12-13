@@ -611,6 +611,8 @@ describe Food::Platos_Ambiental do
     @listaVeg = Food::List.new
     @listaVega = Food::List.new
     @listaCar = Food::List.new
+    @platoAC = Food::Platos_Ambiental.new("Ejemplo")
+    
   end
 
   context "Probando la clase Platos_Ambiental" do 
@@ -985,8 +987,8 @@ describe Food::Platos_Ambiental do
 
     it "La funcion indice de impacto energetico funciona correctamente" do
       # impacto_ambiental = Food::Platos.instance_method(:impacto_energetico)
-      vecPlatos = [@plato2, @plato3, @platoEsp, @platoVeg]
-      expect(vecPlatos.map { |x| x.impacto_energetico}).to eq([1, 1, 3, 3])
+      vecPlatos = [@plato2, @plato3, @platoAC, @platoEsp, @platoVeg]
+      expect(vecPlatos.map { |x| x.impacto_energetico}).to eq([1, 1, 1, 3, 3])
     end
 
     it "La funcion indice de impacto de huella de carbono existe" do
@@ -994,15 +996,24 @@ describe Food::Platos_Ambiental do
     end
 
     it "La funcion indice de impacto de huella de carbono funciona correctamente" do
-      @platoAC = Food::Platos_Ambiental.new("Ejemplo")
       @platoAC.insert_alimH(@chocolate, 50)
-      vecPlatosN = [@platoA, @platoA3,@platoAC, @platoVega, @platoA2]
-      get_ic = ->(plato) { plato.impacto_carbono}
-      expect(vecPlatosN.map(&get_ic)).to eq([1, 1, 2, 3, 3])
+      @vecPlatosN = [@platoA, @platoA3,@platoAC, @platoVega, @platoA2]
+      get_ic = ->(plato) { plato.impacto_carbono }
+      expect(@vecPlatosN.map(&get_ic)).to eq([1, 1, 2, 3, 3])
     end
 
     it "Existe la funcion huella_nutricional" do
       expect(@platoEsp.respond_to?:huella_nutricional).to eq(true)
+    end
+
+    it "La funcion huella nutricional funciona correctamente" do
+      @vecPlatosN = [@platoA, @platoA3,@platoAC, @platoVega, @platoA2]
+      get_hn = ->(plato) { plato.huella_nutricional }
+      expect(@vecPlatosN.map(&get_hn)).to eq([1.0, 1.0, 1.5, 3.0, 2.0])
+    end
+
+    it "Se calcula el plato con la maxima huella nutricional del menu" do
+      expect(@platoAC>@platoA).to eq(true)
     end
 
   end

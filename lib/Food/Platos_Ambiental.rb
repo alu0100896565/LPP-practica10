@@ -43,7 +43,9 @@ module Food
     end
 
     def huella_nutricional
-
+        x = impacto_energetico
+        y = impacto_carbono
+        (x+y) / 2.0
     end
 
     end
