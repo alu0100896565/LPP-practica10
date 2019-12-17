@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Food::List - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-each">#each</a>
+    
+    <li ><a href="#method-i-empty">#empty</a>
+    
+    <li ><a href="#method-i-extract_head">#extract_head</a>
+    
+    <li ><a href="#method-i-extract_tail">#extract_tail</a>
+    
+    <li ><a href="#method-i-insert_head">#insert_head</a>
+    
+    <li ><a href="#method-i-insert_tail">#insert_tail</a>
+    
+    <li ><a href="#method-i-insert_various_head">#insert_various_head</a>
+    
+    <li ><a href="#method-i-insert_various_tail">#insert_various_tail</a>
+    
+    <li ><a href="#method-i-recorrerLista">#recorrerLista</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Food::List">
+  <h1 id="class-Food::List" class="class">
+    class Food::List
+  </h1>
+
+  <section class="description">
+    
+<p>Clase de listas enlazadas. Incluye el mixin Enumerable.</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-head" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">head</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-tail" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tail</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Inicializacion estandar de la lista.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/Food/Lista.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>()
+  <span class="ruby-ivar">@head</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@tail</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">(&amp;block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Defino each para poder usar el modulo Enumerable.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/Food/Lista.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@head</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">nodo</span> = <span class="ruby-ivar">@head</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">nodo</span>.<span class="ruby-identifier">value</span>)
+  <span class="ruby-comment">#yield nodo.value</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">nodo</span>.<span class="ruby-identifier">next</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">break</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">nodo</span> = <span class="ruby-identifier">nodo</span>.<span class="ruby-identifier">next</span>
+  
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-empty" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">empty</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Comprueba si la lista esta vacia.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="empty-source">
+            <pre><span class="ruby-comment"># File lib/Food/Lista.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">empty</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@head</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@tail</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-extract_head" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extract_head</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Extrae el objeto que se encuentra en la cabeza.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="extract_head-source">
+            <pre><span class="ruby-comment"># File lib/Food/Lista.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">extract_head</span>()
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">empty</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;La lista esta vacia&quot;</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">nodo</span> = <span class="ruby-ivar">@head</span>
+  <span class="ruby-ivar">@head</span> = <span class="ruby-ivar">@head</span>.<span class="ruby-identifier">next</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@head</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@head</span>.<span class="ruby-identifier">prev</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-keyword">else</span> <span class="ruby-ivar">@tail</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">nodo</span>.<span class="ruby-identifier">prev</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">nodo</span>.<span class="ruby-identifier">next</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">nodo</span>.<span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-extract_tail" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extract_tail</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Extrae el objeto que se encuentra en la cola.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="extract_tail-source">
+            <pre><span class="ruby-comment"># File lib/Food/Lista.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">extract_tail</span>()
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">empty</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;La lista esta vacia&quot;</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">nodo</span> = <span class="ruby-ivar">@tail</span>
+  <span class="ruby-ivar">@tail</span> = <span class="ruby-ivar">@tail</span>.<span class="ruby-identifier">prev</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@tail</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@tail</span>.<span class="ruby-identifier">next</span> = <span class="ruby-keyword">nil</span>;
+  <span class="ruby-keyword">else</span> <span class="ruby-ivar">@head</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">nodo</span>.<span class="ruby-identifier">prev</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">nodo</span>.<span class="ruby-identifier">next</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">nodo</span>.<span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-insert_head" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">insert_head</span><span
+            class="method-args">(val)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Inserta por la cabeza un objeto.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="insert_head-source">
+            <pre><span class="ruby-comment"># File lib/Food/Lista.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_head</span>(<span class="ruby-identifier">val</span>)
+    <span class="ruby-identifier">nodo</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">val</span>,<span class="ruby-keyword">nil</span>,<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">empty</span>
+    <span class="ruby-ivar">@head</span> = <span class="ruby-identifier">nodo</span>
+    <span class="ruby-ivar">@tail</span> = <span class="ruby-identifier">nodo</span>
+  <span class="ruby-keyword">else</span> 
+    <span class="ruby-ivar">@head</span>.<span class="ruby-identifier">prev</span> = <span class="ruby-identifier">nodo</span>
+    <span class="ruby-identifier">nodo</span>.<span class="ruby-identifier">next</span> = <span class="ruby-ivar">@head</span>
+    <span class="ruby-ivar">@head</span> = <span class="ruby-identifier">nodo</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-insert_tail" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">insert_tail</span><span
+            class="method-args">(val)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Inserta por la cola un objeto.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="insert_tail-source">
+            <pre><span class="ruby-comment"># File lib/Food/Lista.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_tail</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-identifier">nodo</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">val</span>,<span class="ruby-keyword">nil</span>,<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">empty</span>
+    <span class="ruby-ivar">@head</span> = <span class="ruby-identifier">nodo</span>
+    <span class="ruby-ivar">@tail</span> = <span class="ruby-identifier">nodo</span>
+  <span class="ruby-keyword">else</span> 
+    <span class="ruby-ivar">@tail</span>.<span class="ruby-identifier">next</span> = <span class="ruby-identifier">nodo</span>
+    <span class="ruby-identifier">nodo</span>.<span class="ruby-identifier">prev</span> = <span class="ruby-ivar">@tail</span>
+    <span class="ruby-ivar">@tail</span> = <span class="ruby-identifier">nodo</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-insert_various_head" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">insert_various_head</span><span
+            class="method-args">(array)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Inserta por la cabeza varios objetos.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="insert_various_head-source">
+            <pre><span class="ruby-comment"># File lib/Food/Lista.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_various_head</span>(<span class="ruby-identifier">array</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-string">&quot;Se espera como argumento un array&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">array</span>.<span class="ruby-identifier">is_a?</span><span class="ruby-constant">Array</span>
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">array</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">insert_head</span>(<span class="ruby-identifier">i</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-insert_various_tail" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">insert_various_tail</span><span
+            class="method-args">(array)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Inserta por la cola varios objetos.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="insert_various_tail-source">
+            <pre><span class="ruby-comment"># File lib/Food/Lista.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_various_tail</span>(<span class="ruby-identifier">array</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-string">&quot;Se espera como argumento un array&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">array</span>.<span class="ruby-identifier">is_a?</span><span class="ruby-constant">Array</span>
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">array</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">insert_tail</span>(<span class="ruby-identifier">i</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-recorrerLista" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">recorrerLista</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Recorre la lista y devuelve el contenido formateado.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="recorrerLista-source">
+            <pre><span class="ruby-comment"># File lib/Food/Lista.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">recorrerLista</span>
+  
+  <span class="ruby-identifier">nodo</span>=<span class="ruby-ivar">@head</span>
+  <span class="ruby-identifier">content</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">nodo</span><span class="ruby-operator">!=</span><span class="ruby-keyword">nil</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">content</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot; &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">nodo</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>
+    <span class="ruby-identifier">nodo</span> = <span class="ruby-identifier">nodo</span>.<span class="ruby-identifier">next</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">content</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
