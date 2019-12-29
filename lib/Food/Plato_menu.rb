@@ -6,8 +6,8 @@ module Food
             super(nombre)
         end
 
-        def alimento
-
+        def alimento(alim, gram)
+            insert_alimH(alim, gram)
         end
 
     end
