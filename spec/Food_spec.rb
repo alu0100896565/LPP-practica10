@@ -1045,6 +1045,11 @@ describe Food::Plato_menu do
     it "Responde al metodo alimento" do
       expect(@plato_menu.respond_to? :alimento).to eq(true)
     end
+
+    it "El metodo alimento funciona correctamente" do
+      @plato_menu.alimento(@lentejas, 100)
+      expect(@plato_menu.proteins).to eq(23.5)
+    end
     
   end
 
