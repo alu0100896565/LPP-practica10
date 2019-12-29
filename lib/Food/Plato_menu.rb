@@ -1,6 +1,6 @@
 module Food
 
-    class Plato_menu
+    class Plato_menu < Platos_Ambiental
 
 
     end
