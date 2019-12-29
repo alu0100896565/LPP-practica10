@@ -1,6 +1,6 @@
 module Food
 
-    class Menu_diario
+    class Menu
 
 
     end

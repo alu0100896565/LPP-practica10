@@ -1031,7 +1031,7 @@ describe Food::Platos_Ambiental do
 
 end
 
-describe Food::Menu_diario do
+describe Food::Menu do
   before (:all) do
     @plato_menu = Food::Platos_Ambiental.new("plato_menu1")
   end
