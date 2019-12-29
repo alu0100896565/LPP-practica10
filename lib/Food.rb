@@ -5,6 +5,7 @@ require "Food/Dieta"
 require "Food/Dieta_lista"
 require "Food/Platos"
 require "Food/Platos_Ambiental"
+require "Food/Menu_diario"
 
 module Food
   class Error < StandardError; end

@@ -1031,4 +1031,7 @@ describe Food::Platos_Ambiental do
 
 end
 
+describe Food::Menu_diario do
+end
+
 end
