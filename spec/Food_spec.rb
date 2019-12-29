@@ -1033,9 +1033,11 @@ end
 
 describe Food::Plato_menu do
 
-  context " " do
+  context "Probando la clase Plato_menu: componentes" do
 
-
+    it "La clase Plato_menu es hija de la clase Platos_Ambiental" do
+      expect(Food::Plato_menu.superclass).to eq(Food::Platos_Ambiental)
+    end
     
   end
 
