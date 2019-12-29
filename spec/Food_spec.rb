@@ -1031,7 +1031,24 @@ describe Food::Platos_Ambiental do
 
 end
 
+describe Food::Plato_menu do
+
+  context " " do
+
+
+    
+  end
+
+end
+
 describe Food::Menu_diario do
+
+  context " " do
+
+
+
+  end
+
 end
 
 end
