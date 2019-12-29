@@ -1047,7 +1047,7 @@ describe Food::Plato_menu do
     end
 
     it "El metodo alimento funciona correctamente" do
-      @plato_menu.alimento(@lentejas, 100)
+      @plato_menu.alimento("lentejas", 100)
       expect(@plato_menu.proteins).to eq(23.5)
     end
 
