@@ -1050,6 +1050,10 @@ describe Food::Plato_menu do
       @plato_menu.alimento(@lentejas, 100)
       expect(@plato_menu.proteins).to eq(23.5)
     end
+
+    it "Existe el metodo de clase __alimento" do
+      expect(Food::Plato_menu.__alimento("lentejas")).to eq(@lentejas)
+    end
     
   end
 
