@@ -1031,16 +1031,12 @@ describe Food::Platos_Ambiental do
 
 end
 
-describe Food::Plato_menu do
+describe Food::Menu_diario do
   before (:all) do
-    @plato_menu = Food::Plato_menu.new("plato_menu1")
+    @plato_menu = Food::Platos_Ambiental.new("plato_menu1")
   end
 
-  context "Probando la clase Plato_menu: componentes" do
-
-    it "La clase Plato_menu es hija de la clase Platos_Ambiental" do
-      expect(Food::Plato_menu.superclass).to eq(Food::Platos_Ambiental)
-    end
+  context "Añadiendo metodos a Platos_Ambiental" do
 
     it "Responde al metodo alimento" do
       expect(@plato_menu.respond_to? :alimento).to eq(true)
@@ -1052,21 +1048,10 @@ describe Food::Plato_menu do
     end
 
     it "Existe el metodo de clase __alimento" do
-      expect(Food::Plato_menu.__alimento("lentejas")).to eq(@lentejas)
+      expect(Food::Platos_Ambiental.__alimento("lentejas")).to eq(@lentejas)
     end
     
   end
 
 end
-
-describe Food::Menu_diario do
-
-  context " " do
-
-
-
-  end
-
-end
-
 end
