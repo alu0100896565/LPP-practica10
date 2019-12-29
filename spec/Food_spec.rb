@@ -1033,7 +1033,7 @@ end
 
 describe Food::Menu do
   before (:all) do
-    @plato_menu = Food::Platos_Ambiental.new("plato_menu1")
+    @plato_menu = Food::Platos.new("plato_menu1")
   end
 
   context "Añadiendo metodos a Platos_Ambiental" do
@@ -1048,9 +1048,37 @@ describe Food::Menu do
     end
 
     it "Existe el metodo de clase __alimento" do
-      expect(Food::Platos_Ambiental.__alimento("lentejas")).to eq(@lentejas)
+      expect(Food::Platos.__alimento("lentejas")).to eq(@lentejas)
     end
     
+    it "Se puede inicializar un plato con un bloque" do
+      # plato_menu2 = Food::Platos_Ambiental.new("Ejemplo").tap do |x|
+      #   #nombre = "Hamburguesa especial"
+      #   # alimento :descripcion => "Carne de Vaca",
+      #   #          :gramos => 100
+      #   # alimento :descripcion => "Huevos",
+      #   #          :gramos => 20
+      #   # alimento :descripcion => "Queso",
+      #   #          :gramos => 30
+      #   x.alimento "Carne de vaca", 100
+      #   x.alimento "Huevos", 20
+      #   x.alimento "Queso", 30
+      # end
+      
+      plato_menu2 = Food::Platos.new("Ejemplo") do
+        @nombre = "Hamburguesa especial"
+         alimento "Carne de vaca", 100
+         alimento "Huevos", 20
+         alimento "Queso", 30
+      end
+
+      #expect(plato_menu2.nombre).to eq("Ejemplo")
+      expect(plato_menu2.proteins).to eq(31.2)
+      expect(plato_menu2.lipids).to eq(15.2)
+      expect(plato_menu2.carbohidrats).to eq(0.61)
+      expect(plato_menu2.emisiones).to eq(54.14)
+    end
+
   end
 
 end
