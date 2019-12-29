@@ -27,7 +27,8 @@ module Food
             super(nombre)
         end
 
-        def alimento(alim, gram)
+        def alimento(nombreAlim, gram)
+            alim = Plato_menu.__alimento(nombreAlim)
             insert_alimH(alim, gram)
         end
 
