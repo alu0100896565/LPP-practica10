@@ -9,6 +9,10 @@ module Food
             @conjPrecios = []
         end
 
+        def findPlato(name)
+            Platos.arrayPlatos.find { |x| name == x.descripcion }
+        end
+
     end
 
 end

@@ -154,7 +154,7 @@ def self.__alimento(nombre)
     nuez = Food::Alimentos.new({ :nombre => "Nuez", :prot => 20.0, :carbs => 21.0, :lip => 54.0, :emisiones => 0.3, :terreno => 7.9})
     arrayAlimentos = [lentejas, carneVaca, carneCordero, camarones, chocolate, salmon, cerdo, pollo, queso, cerveza, leche, huevos, cafe, tofu, nuez]
 
-      arrayAlimentos.find { |x| nombre == x.nombre}
+      arrayAlimentos.find { |x| nombre == x.nombre }
     end
 
     def alimento(options = {})#(descripcion, gramos)
