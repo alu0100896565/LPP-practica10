@@ -1043,7 +1043,7 @@ describe Food::Menu do
     end
 
     it "El metodo alimento funciona correctamente" do
-      @plato_menu.alimento("lentejas", 100)
+      @plato_menu.alimento(:descripcion =>"lentejas", :gramos =>100)
       expect(@plato_menu.proteins).to eq(23.5)
     end
 
@@ -1055,7 +1055,7 @@ describe Food::Menu do
       
       plato_menu2 = Food::Platos.new("Ejemplo") do
          nombre "Hamburguesa especial"
-         alimento :descripcion => "Carne de Vaca",
+         alimento :descripcion => "Carne de vaca",
                   :gramos => 100
          alimento :descripcion => "Huevos",
                   :gramos => 20

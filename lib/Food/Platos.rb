@@ -150,9 +150,14 @@ def self.__alimento(nombre)
       arrayAlimentos.find { |x| nombre == x.nombre}
     end
 
-    def alimento(descripcion, gramos)
-        alim = Platos_Ambiental.__alimento(descripcion)
+    def alimento(options = {})#(descripcion, gramos)
+        if options[:descripcion]
+        gramos = 100
+        gramos = options[:gramos] if options[:gramos]
+        alim = Platos_Ambiental.__alimento(options[:descripcion])
         insert_alimH(alim, gramos)
+        else return nil
+        end
     end
 
     def nombre(name)
