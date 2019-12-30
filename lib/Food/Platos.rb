@@ -17,14 +17,14 @@ class Platos
     
     include Comparable
 
-attr_accessor :nombrep, :ali_list, :gram_list
+attr_accessor :nombrep, :ali_list, :gram_list, :descripcion
     # Se inicializa el plato con su nombre.
 def initialize(nombre, &block)
     @nombrep = nombre
     @ali_list = List.new
     @gram_list = List.new
     @alim_total = Alimentos.new({ :nombre => nombre, :prot => 0.0, :carbs => 0.0, :lip => 0.0, :emisiones => 0.0, :terreno => 0.0})
-    
+    @descripcion = ""
 
     if block_given?  
         if block.arity == 1
@@ -155,7 +155,9 @@ def self.__alimento(nombre)
         insert_alimH(alim, gramos)
     end
 
-    
+    def nombre(name)
+        @descripcion = name
+    end
 
 end
 
