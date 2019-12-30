@@ -1035,7 +1035,7 @@ describe Food::Menu do
   before (:all) do
     @plato_menu = Food::Platos.new("plato_menu1")
     @menu1 = Food::Menu.new("Ejemplo1")
-    @plato_menu2 = Food::Platos.new("Ejemplo") do
+    @plato_menu2 = Food::Platos.new("Plato1") do
       nombre "Hamburguesa especial"
       alimento :descripcion => "Carne de vaca",
                :gramos => 100
@@ -1045,6 +1045,31 @@ describe Food::Menu do
                :gramos => 30
    
    end
+
+   @plato_menu3 = Food::Platos.new("Plato2") do
+      nombre "Lentejas con huevos duros"
+      alimento :descripcion => "lentejas",
+               :gramos => 120
+      alimento :descripcion => "Huevos",
+               :gramos => 40
+   end
+
+   @plato_menu4 = Food::Platos.new("Plato3") do
+    nombre "Camarones y chocolate"
+    alimento :descripcion => "Camarones",
+             :gramos => 90
+    alimento :descripcion => "Chocolate",
+             :gramos => 50
+ end
+
+ @plato_menu5 = Food::Platos.new("Plato4") do
+  nombre "Tofu y nuez"
+  alimento :descripcion => "Tofu",
+           :gramos => 100
+  alimento :descripcion => "Nuez",
+           :gramos => 60
+end
+
   end
 
   context "Añadiendo metodos a Platos" do
@@ -1071,7 +1096,7 @@ describe Food::Menu do
     end
 
     it "La clase Plato guarda las instancias que se crean de ella usando bloques" do
-      expect(Food::Platos.arrayPlatos).to eq([@plato_menu2])
+      expect(Food::Platos.arrayPlatos).to eq([@plato_menu2, @plato_menu3, @plato_menu4, @plato_menu5])
     end
 
   end
