@@ -1083,6 +1083,11 @@ describe Food::Menu do
       expect(@menu1.respond_to? :descripcion).to eq(true)
     end
 
+    it "La clase menu tiene un conjunto de platos y un conjunto de precios asociados" do
+      expect(@menu1.respond_to? :conjPlatos).to eq(true)
+      expect(@menu1.respond_to? :conjPrecios).to eq(true)
+    end
+
   end
 
 end
