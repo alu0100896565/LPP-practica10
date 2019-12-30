@@ -1034,9 +1034,10 @@ end
 describe Food::Menu do
   before (:all) do
     @plato_menu = Food::Platos.new("plato_menu1")
+    @menu1 = Food::Menu.new("Ejemplo1")
   end
 
-  context "Añadiendo metodos a Platos_Ambiental" do
+  context "Añadiendo metodos a Platos" do
 
     it "Responde al metodo alimento" do
       expect(@plato_menu.respond_to? :alimento).to eq(true)
@@ -1069,6 +1070,15 @@ describe Food::Menu do
       expect(plato_menu2.lipids).to eq(15.2)
       expect(plato_menu2.carbohidrats).to eq(0.61)
       expect(plato_menu2.emisiones).to eq(54.14)
+    end
+
+  end
+
+  context "Definiendo la clase Menu" do
+
+    it "La clase menu tiene nombre y descripcion" do
+      expect(@menu1.respond_to? :nombre).to eq(true)
+      expect(@menu1.respond_to? :descripcion).to eq(true)
     end
 
   end
