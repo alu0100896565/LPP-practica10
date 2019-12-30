@@ -1156,6 +1156,11 @@ end
       expect(@menu3.vct).to eq(1489.74)
     end
 
+    it "Se obtienen los valores ambientales del menu" do 
+      expect(@menu3.emisionesMenu).to eq(75.83)
+      expect(@menu3.terrenoMenu).to eq(194.24)
+    end
+
   end
 
 end

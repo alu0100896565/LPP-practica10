@@ -136,6 +136,10 @@ def emisiones
     @alim_total.emisiones
 end
 
+def terreno
+    @alim_total.terreno
+end
+
 def self.__alimento(nombre)
     lentejas = Food::Alimentos.new({ :nombre => "lentejas", :prot => 23.5, :carbs => 52.0, :lip => 1.4, :emisiones => 0.4, :terreno => 3.4})
     carneVaca = Food::Alimentos.new({ :nombre => "Carne de vaca", :prot => 21.1, :carbs => 0.0, :lip => 3.1, :emisiones => 50.0, :terreno => 164.0})
