@@ -71,7 +71,16 @@ module Food
             terr.round(2)
         end
 
-        
+        def to_s
+            cadena = "#{@nombre}: #{@descripcionp}, con Platos:\n"
+            @conjPlatos.zip(@conjPrecios).map { |x,y| cadena += x.descripcion + ", Precio: " + y.to_s + ";\n"}
+            cadena += ". Con Proteinas: " + proteinas.to_s
+            cadena += ". Con carbohidratos: " + carbohidratos.to_s
+            cadena += ". Con grasas: " + grasas.to_s
+            cadena += ". Con emisiones: " + emisionesMenu.to_s
+            cadena += ". Con terreno utilizado: " + terrenoMenu.to_s 
+            cadena
+        end
 
     end
 
