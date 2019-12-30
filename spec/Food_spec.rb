@@ -1035,6 +1035,16 @@ describe Food::Menu do
   before (:all) do
     @plato_menu = Food::Platos.new("plato_menu1")
     @menu1 = Food::Menu.new("Ejemplo1")
+    @plato_menu2 = Food::Platos.new("Ejemplo") do
+      nombre "Hamburguesa especial"
+      alimento :descripcion => "Carne de vaca",
+               :gramos => 100
+      alimento :descripcion => "Huevos",
+               :gramos => 20
+      alimento :descripcion => "Queso",
+               :gramos => 30
+   
+   end
   end
 
   context "Añadiendo metodos a Platos" do
@@ -1053,23 +1063,15 @@ describe Food::Menu do
     end
     
     it "Se puede inicializar un plato con un bloque" do
-      
-      plato_menu2 = Food::Platos.new("Ejemplo") do
-         nombre "Hamburguesa especial"
-         alimento :descripcion => "Carne de vaca",
-                  :gramos => 100
-         alimento :descripcion => "Huevos",
-                  :gramos => 20
-         alimento :descripcion => "Queso",
-                  :gramos => 30
-      
-      end
+      expect(@plato_menu2.descripcion).to eq("Hamburguesa especial")
+      expect(@plato_menu2.proteins).to eq(31.2)
+      expect(@plato_menu2.lipids).to eq(15.2)
+      expect(@plato_menu2.carbohidrats).to eq(0.61)
+      expect(@plato_menu2.emisiones).to eq(54.14)
+    end
 
-      expect(plato_menu2.descripcion).to eq("Hamburguesa especial")
-      expect(plato_menu2.proteins).to eq(31.2)
-      expect(plato_menu2.lipids).to eq(15.2)
-      expect(plato_menu2.carbohidrats).to eq(0.61)
-      expect(plato_menu2.emisiones).to eq(54.14)
+    it "La clase Plato guarda las instancias que se crean de ella usando bloques" do
+      expect(Food::Platos.arrayPlatos).to eq([@plato_menu2])
     end
 
   end

@@ -5,6 +5,7 @@ module Food
         def initialize(nombre)
             @nombre = nombre
             @descripcion = ""
+
         end
 
     end
