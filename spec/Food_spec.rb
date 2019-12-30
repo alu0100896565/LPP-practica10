@@ -1054,19 +1054,14 @@ describe Food::Menu do
     it "Se puede inicializar un plato con un bloque" do
       
       plato_menu2 = Food::Platos.new("Ejemplo") do
-        # nombre "Hamburguesa especial"
-        # alimento :descripcion => "Carne de Vaca",
-        #          :gramos => 100
-        # alimento :descripcion => "Huevos",
-        #          :gramos => 20
-        # alimento :descripcion => "Queso",
-        #          :gramos => 30
-      
-      
          nombre "Hamburguesa especial"
-         alimento "Carne de vaca", 100
-         alimento "Huevos", 20
-         alimento "Queso", 30
+         alimento :descripcion => "Carne de Vaca",
+                  :gramos => 100
+         alimento :descripcion => "Huevos",
+                  :gramos => 20
+         alimento :descripcion => "Queso",
+                  :gramos => 30
+      
       end
 
       expect(plato_menu2.descripcion).to eq("Hamburguesa especial")
