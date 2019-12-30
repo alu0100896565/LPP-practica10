@@ -25,7 +25,13 @@ def initialize(nombre, &block)
     @gram_list = List.new
     @alim_total = Alimentos.new({ :nombre => nombre, :prot => 0.0, :carbs => 0.0, :lip => 0.0, :emisiones => 0.0, :terreno => 0.0})
 
-   
+    if block_given?  
+        if block.arity == 1
+          yield self
+        else
+         instance_eval(&block) 
+        end
+      end
 end
 
 # Se define el operador <=> para hacer uso del modulo Comparable.
