@@ -1161,6 +1161,15 @@ end
       expect(@menu3.terrenoMenu).to eq(194.24)
     end
 
+    it "Se obtiene una presentacion formateada del menu" do 
+      expect(@menu3.to_s).to eq("Ejemplo: Un poco de todo, con Platos:
+Hamburguesa especial, Precio: 4.25;
+Lentejas con huevos duros, Precio: 3.1;
+Camarones y chocolate, Precio: 7.99;
+Tofu y nuez, Precio: 2.99;
+. Con Proteinas: 103.09. Con carbohidratos: 102.8. Con grasas: 74.02. Con emisiones: 75.83. Con terreno utilizado: 194.24")
+    end
+
   end
 
 end
