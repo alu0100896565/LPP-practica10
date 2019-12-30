@@ -35,7 +35,29 @@ module Food
             @descripcionp = name
         end 
 
-        
+        def proteinas
+            prots = 0
+            @conjPlatos.map { |x| prots += x.proteins}
+            prots.round(2)
+        end
+
+        def carbohidratos
+            carbs = 0
+            @conjPlatos.map { |x| carbs += x.carbohidrats}
+            carbs.round(2)
+        end
+
+        def grasas
+            gras = 0
+            @conjPlatos.map { |x| gras += x.lipids}
+            gras.round(2)
+        end
+
+        def vct
+            kcal = 0
+            @conjPlatos.map { |x| kcal += x.vct}
+            kcal.round(2)
+        end
 
     end
 
