@@ -1129,10 +1129,12 @@ end
         componente :descripcion => "Hamburguesa especial",
                    :precio => 4.25
         componente :descripcion => "Lentejas con huevos duros",
-                   :precio => 4.25
+                   :precio => 3.10
         componente :descripcion => "Tofu y nuez",
-                   :precio => 4.25
+                   :precio => 2.99
       end
+      expect(@menu2.conjPlatos).to eq([@plato_menu2, @plato_menu3, @plato_menu5])
+      expect(@menu2.conjPrecios).to eq([4.25, 3.10, 2.99])
     end
 
   end
