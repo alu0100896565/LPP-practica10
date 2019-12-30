@@ -17,13 +17,14 @@ class Platos
     
     include Comparable
 
-attr_accessor :nombre, :ali_list, :gram_list
+attr_accessor :nombrep, :ali_list, :gram_list
     # Se inicializa el plato con su nombre.
 def initialize(nombre, &block)
-    @nombre = nombre
+    @nombrep = nombre
     @ali_list = List.new
     @gram_list = List.new
     @alim_total = Alimentos.new({ :nombre => nombre, :prot => 0.0, :carbs => 0.0, :lip => 0.0, :emisiones => 0.0, :terreno => 0.0})
+    
 
     if block_given?  
         if block.arity == 1
@@ -86,7 +87,7 @@ end
 
 # Genera en forma de cadena el plato formateado
 def to_s
-    x="#{@nombre}, prot: #{@alim_total.prot}, carbs: #{@alim_total.carbs}, lip: #{@alim_total.lip}, emisiones: #{@alim_total.emisiones}, terreno: #{@alim_total.terreno}, VCT: #{@alim_total.valorEnergetico}."
+    x="#{@nombrep}, prot: #{@alim_total.prot}, carbs: #{@alim_total.carbs}, lip: #{@alim_total.lip}, emisiones: #{@alim_total.emisiones}, terreno: #{@alim_total.terreno}, VCT: #{@alim_total.valorEnergetico}."
     y=" Compuesto por: "
     lista2 = ali_list.zip(gram_list)
     lista2.cycle(1){ |z| y+=z[0].nombre + ", " + z[1].to_s + " gramos, "}
@@ -153,6 +154,8 @@ def self.__alimento(nombre)
         alim = Platos_Ambiental.__alimento(descripcion)
         insert_alimH(alim, gramos)
     end
+
+    
 
 end
 

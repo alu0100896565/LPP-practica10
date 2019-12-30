@@ -513,7 +513,7 @@ end
 context "Probando la clase Platos: atributos" do
 
 it "Los platos deben tener nombre" do
-  expect(@plato.respond_to?:nombre).to eq(true)
+  expect(@plato.respond_to?:nombrep).to eq(true)
 end
 
 it "Los platos tienen una lista de aimentos" do
@@ -1052,27 +1052,24 @@ describe Food::Menu do
     end
     
     it "Se puede inicializar un plato con un bloque" do
-      # plato_menu2 = Food::Platos_Ambiental.new("Ejemplo").tap do |x|
-      #   #nombre = "Hamburguesa especial"
-      #   # alimento :descripcion => "Carne de Vaca",
-      #   #          :gramos => 100
-      #   # alimento :descripcion => "Huevos",
-      #   #          :gramos => 20
-      #   # alimento :descripcion => "Queso",
-      #   #          :gramos => 30
-      #   x.alimento "Carne de vaca", 100
-      #   x.alimento "Huevos", 20
-      #   x.alimento "Queso", 30
-      # end
       
       plato_menu2 = Food::Platos.new("Ejemplo") do
-        @nombre = "Hamburguesa especial"
+        # nombre "Hamburguesa especial"
+        # alimento :descripcion => "Carne de Vaca",
+        #          :gramos => 100
+        # alimento :descripcion => "Huevos",
+        #          :gramos => 20
+        # alimento :descripcion => "Queso",
+        #          :gramos => 30
+      
+      
+         nombre "Hamburguesa especial"
          alimento "Carne de vaca", 100
          alimento "Huevos", 20
          alimento "Queso", 30
       end
 
-      #expect(plato_menu2.nombre).to eq("Ejemplo")
+      expect(plato_menu2.descripcion).to eq("Hamburguesa especial")
       expect(plato_menu2.proteins).to eq(31.2)
       expect(plato_menu2.lipids).to eq(15.2)
       expect(plato_menu2.carbohidrats).to eq(0.61)

@@ -47,7 +47,7 @@ module Food
 
     # Obtiene la eficiencia energética formateada como cadena.
     def efiEn
-        x = "Para crear el plato: #{@nombre}, se generan "
+        x = "Para crear el plato: #{@nombrep}, se generan "
         x += (Platos.instance_method(:alim_total).bind(self).call).emisiones.to_s
         x += " de emisiones de CO2 y "
         x += (Platos.instance_method(:alim_total).bind(self).call).terreno.to_s
