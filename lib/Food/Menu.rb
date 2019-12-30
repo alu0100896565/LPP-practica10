@@ -2,11 +2,19 @@ module Food
 
     class Menu
         attr_reader :nombre, :descripcionp, :conjPlatos, :conjPrecios
-        def initialize(nombre)
+        def initialize(nombre, &block)
             @nombre = nombre
             @descripcionp = ""
             @conjPlatos = []
             @conjPrecios = []
+
+            if block_given?  
+                if block.arity == 1
+                  yield self
+                else
+                 instance_eval(&block) 
+                end
+              end
         end
 
         def findPlato(name)

@@ -1132,7 +1132,7 @@ end
                    :precio => 4.25
         componente :descripcion => "Tofu y nuez",
                    :precio => 4.25
-
+      end
     end
 
   end
