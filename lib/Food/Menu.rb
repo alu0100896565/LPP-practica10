@@ -59,7 +59,17 @@ module Food
             kcal.round(2)
         end
 
-        
+        def emisionesMenu
+            emis = 0
+            @conjPlatos.map { |x| emis += x.emisiones}
+            emis.round(2)
+        end
+
+        def terrenoMenu
+            terr = 0
+            @conjPlatos.map { |x| terr += x.terreno}
+            terr.round(2)
+        end
 
     end
 
