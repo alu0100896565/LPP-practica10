@@ -1070,6 +1070,18 @@ describe Food::Menu do
            :gramos => 60
 end
 
+  @menu3 = Food::Menu.new("Ejemplo") do
+  descripcion "Un poco de todo"
+  componente :descripcion => "Hamburguesa especial",
+             :precio => 4.25
+  componente :descripcion => "Lentejas con huevos duros",
+             :precio => 3.10
+  componente :descripcion => "Camarones y chocolate",
+             :precio => 7.99
+  componente :descripcion => "Tofu y nuez",
+             :precio => 2.99
+  end
+
   end
 
   context "Añadiendo metodos a Platos" do
@@ -1135,6 +1147,13 @@ end
       end
       expect(@menu2.conjPlatos).to eq([@plato_menu2, @plato_menu3, @plato_menu5])
       expect(@menu2.conjPrecios).to eq([4.25, 3.10, 2.99])
+    end
+
+    it "Se obtienen los valores nutricionales del menu" do
+      expect(@menu3.proteinas).to eq(103.09)
+      expect(@menu3.carbohidratos).to eq(102.8)
+      expect(@menu3.grasas).to eq(74.02)
+      expect(@menu3.vct).to eq(1489.74)
     end
 
   end
