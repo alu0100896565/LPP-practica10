@@ -1,10 +1,10 @@
 module Food
 
     class Menu
-        attr_reader :nombre, :descripcion, :conjPlatos, :conjPrecios
+        attr_reader :nombre, :descripcionp, :conjPlatos, :conjPrecios
         def initialize(nombre)
             @nombre = nombre
-            @descripcion = ""
+            @descripcionp = ""
             @conjPlatos = []
             @conjPrecios = []
         end
@@ -22,6 +22,10 @@ module Food
             else return nil
             end
         end
+
+        def descripcion(name)
+            @descripcionp = name
+        end 
 
     end
 

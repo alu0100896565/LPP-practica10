@@ -1105,7 +1105,7 @@ end
 
     it "La clase menu tiene nombre y descripcion" do
       expect(@menu1.respond_to? :nombre).to eq(true)
-      expect(@menu1.respond_to? :descripcion).to eq(true)
+      expect(@menu1.respond_to? :descripcionp).to eq(true)
     end
 
     it "La clase menu tiene un conjunto de platos y un conjunto de precios asociados" do
@@ -1121,6 +1121,18 @@ end
       @menu1.componente(:descripcion => "Hamburguesa especial", :precio => 5.50)
       expect(@menu1.conjPlatos).to eq([@plato_menu2])
       expect(@menu1.conjPrecios).to eq([5.50])
+    end
+
+    it "La clase menu se puede definir de forma natural" do
+      @menu2 = Food::Menu.new("Ejemplo") do
+        descripcion "Un poco de todo"
+        componente :descripcion => "Hamburguesa especial",
+                   :precio => 4.25
+        componente :descripcion => "Lentejas con huevos duros",
+                   :precio => 4.25
+        componente :descripcion => "Tofu y nuez",
+                   :precio => 4.25
+
     end
 
   end
