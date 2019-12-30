@@ -1092,6 +1092,12 @@ describe Food::Menu do
       expect(@menu1.findPlato("Hamburguesa especial")).to eq(@plato_menu2)
     end
 
+    it "La clase menu puede añadir platos y sus precios" do
+      @menu1.componente(:descripcion => "Hamburguesa especial", :precio => 5.50)
+      expect(@menu1.conjPlatos).to eq([@plato_menu2])
+      expect(@menu1.conjPrecios).to eq([5.50])
+    end
+
   end
 
 end
