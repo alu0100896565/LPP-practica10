@@ -1088,6 +1088,10 @@ describe Food::Menu do
       expect(@menu1.respond_to? :conjPrecios).to eq(true)
     end
 
+    it "La clase menu puede identificar platos previamente inicializados" do
+      expect(@menu1.findPlato("Hamburguesa especial")).to eq(@plato_menu2)
+    end
+
   end
 
 end
