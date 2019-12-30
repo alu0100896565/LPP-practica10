@@ -15,6 +15,12 @@ module Food
     # Incluye el mixin Comparable.
 class Platos
     
+    @@arrayPlatos = []
+
+    def self.arrayPlatos
+        @@arrayPlatos
+    end
+
     include Comparable
 
 attr_accessor :nombrep, :ali_list, :gram_list, :descripcion
@@ -32,6 +38,7 @@ def initialize(nombre, &block)
         else
          instance_eval(&block) 
         end
+        self.class.arrayPlatos << self
       end
 end
 
