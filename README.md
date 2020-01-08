@@ -1,12 +1,12 @@
 # Food
 
-Practica 9. Lenguajes y Paradigmas de Programación.
+Practica 10. Lenguajes y Paradigmas de Programación.
 Eduardo Suárez Ojeda
 Alu0100896565
 
 ## Usage
 
-Práctica donde trataremos con menús dietéticos mediante su indicador de huella nutricional.
+Práctica donde trataremos crearemos un DSL de ruby que trabaje con alimentos, platos y menús.
 
 ## License
 
